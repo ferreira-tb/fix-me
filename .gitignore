@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor
+.idea/*
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# NPM
+**/node_modules
+**/dist
+
+# Rust
+debug/
+target/
+**/*.rs.bk
+*.pdb
+rustc-ice-*.txt
+
+# Tauri
+**/gen
+
+# Others
+.temp/
+**/*vite*timestamp*
+.eslintcache
+.svelte-kit
+.output
+
+workspace.md

@@ -1,0 +1,6 @@
+{
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": ["svelte:default", "core:event:default", "process:allow-exit"]
+}
