@@ -27,8 +27,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0(svelte@5.15.0)
       tauri-plugin-svelte:
-        specifier: ^0.1.2
-        version: 0.1.2
+        specifier: ^0.1.3
+        version: 0.1.3
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^3.0.8
@@ -82,8 +82,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1(svelte@5.15.0)(typescript@5.7.2)
       tailwind-merge:
-        specifier: ^2.5.5
-        version: 2.5.5
+        specifier: ^2.6.0
+        version: 2.6.0
       tailwind-variants:
         specifier: ^0.3.0
         version: 0.3.0(tailwindcss@3.4.17)
@@ -511,8 +511,8 @@ packages:
   '@tauri-apps/plugin-process@2.2.0':
     resolution: {integrity: sha512-uypN2Crmyop9z+KRJr3zl71OyVFgTuvHFjsJ0UxxQ/J5212jVa5w4nPEYjIewcn8bUEXacRebwE6F7owgrbhSw==}
 
-  '@tauri-store/shared@0.3.0':
-    resolution: {integrity: sha512-oGu9cDHgU1eXhq+h8BNU7POtVK+y2HVvQUyYwSExNSudlgqj9agVgcf1+NEWMGTumgkbJRSmcdcoiRiUBoQ40w==}
+  '@tauri-store/shared@0.3.1':
+    resolution: {integrity: sha512-ZzjfZ5+aJnhWk3qTrXAAcFYPG/xXBMROYi4zwRYuSCRYIXjnfcalQeDdS1wPmfrLoq+PuW6USTWYW8eEw86g2Q==}
 
   '@tb-dev/eslint-config@5.6.0':
     resolution: {integrity: sha512-ZlWUvcpzmGdXeSNyMasLHfxrF8+0y/3aOr/mT3c2HJ7KXUi8P/F5wMVY3+pCTkc+iahgB1wLbmrGQZNMAk0l8w==}
@@ -1582,8 +1582,8 @@ packages:
     resolution: {integrity: sha512-YWl8rAd4hSjERLtLvP6h2pflGtmrJwv+L12BgrOtHYJCpvLS9WKp/YNAdyolw3FymXtcYZqhSWvWlu5O1X7tgQ==}
     engines: {node: '>=18'}
 
-  tailwind-merge@2.5.5:
-    resolution: {integrity: sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==}
+  tailwind-merge@2.6.0:
+    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
 
   tailwind-variants@0.3.0:
     resolution: {integrity: sha512-ho2k5kn+LB1fT5XdNS3Clb96zieWxbStE9wNLK7D0AV64kdZMaYzAKo0fWl6fXLPY99ffF9oBJnIj5escEl/8A==}
@@ -1601,8 +1601,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  tauri-plugin-svelte@0.1.2:
-    resolution: {integrity: sha512-4c9D9NQDAIIkwyRtTllrL8OMX1nBl3ktDtMuNERCaRJ9BYT+kJywV/o7cFjI+QRtwGF0xlJNJnb/oQwqNkHbJw==}
+  tauri-plugin-svelte@0.1.3:
+    resolution: {integrity: sha512-vgc8BlFLU+F6z0EQglrBBDpWCY2g95eCawHn325Dn3WivKFbQ0q09MF6JeUCQdGh3Xh8Is9GRgRoGxyjiABIUQ==}
 
   thenify-all@1.6.0:
     resolution: {integrity: sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==}
@@ -2080,7 +2080,7 @@ snapshots:
     dependencies:
       '@tauri-apps/api': 2.1.1
 
-  '@tauri-store/shared@0.3.0':
+  '@tauri-store/shared@0.3.1':
     dependencies:
       '@tauri-apps/api': 2.1.1
       '@tb-dev/utils': 4.1.0
@@ -3138,11 +3138,11 @@ snapshots:
       magic-string: 0.30.15
       zimmerframe: 1.1.2
 
-  tailwind-merge@2.5.5: {}
+  tailwind-merge@2.6.0: {}
 
   tailwind-variants@0.3.0(tailwindcss@3.4.17):
     dependencies:
-      tailwind-merge: 2.5.5
+      tailwind-merge: 2.6.0
       tailwindcss: 3.4.17
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.17):
@@ -3176,10 +3176,10 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  tauri-plugin-svelte@0.1.2:
+  tauri-plugin-svelte@0.1.3:
     dependencies:
       '@tauri-apps/api': 2.1.1
-      '@tauri-store/shared': 0.3.0
+      '@tauri-store/shared': 0.3.1
       '@tb-dev/utils': 4.1.0
       svelte: 5.15.0
 
