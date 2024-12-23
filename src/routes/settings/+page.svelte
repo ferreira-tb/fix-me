@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Textarea from '$lib/components/textarea.svelte';
   import { settings } from '$lib/stores/settings';
+  import Textarea from '$lib/components/textarea.svelte';
 </script>
 
 <div class="h-full p-4">

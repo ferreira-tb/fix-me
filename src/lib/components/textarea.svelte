@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
-  import { Textarea } from '$lib/components/ui/textarea';
   import { Label } from '$lib/components/ui/label';
+  import { Textarea } from '$lib/components/ui/textarea';
 
   interface Props {
     class?: string;

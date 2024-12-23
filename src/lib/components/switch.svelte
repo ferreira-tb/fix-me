@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
-  import { Switch } from '$lib/components/ui/switch';
   import { Label } from '$lib/components/ui/label';
+  import { Switch } from '$lib/components/ui/switch';
 
   interface Props {
     checked: boolean;

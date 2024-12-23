@@ -1,8 +1,8 @@
 <script lang="ts">
   import Switch from './switch.svelte';
   import { settings } from '$lib/stores/settings';
-  import * as Sidebar from '$lib/components/ui/sidebar';
   import SidebarFooter from './sidebar-footer.svelte';
+  import * as Sidebar from '$lib/components/ui/sidebar';
 </script>
 
 <Sidebar.Root>

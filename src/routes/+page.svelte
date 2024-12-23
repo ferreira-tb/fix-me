@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { message } from '@tauri-apps/plugin-dialog';
-  import { writeText } from '@tauri-apps/plugin-clipboard-manager';
-  import { Button } from '$lib/components/ui/button';
-  import Textarea from '$lib/components/textarea.svelte';
-  import { settings } from '$lib/stores/settings';
-  import { prompt } from '$lib/stores/prompt';
   import { commands } from '$lib/api';
+  import { prompt } from '$lib/stores/prompt';
+  import { settings } from '$lib/stores/settings';
+  import { Button } from '$lib/components/ui/button';
+  import { message } from '@tauri-apps/plugin-dialog';
+  import Textarea from '$lib/components/textarea.svelte';
+  import { writeText } from '@tauri-apps/plugin-clipboard-manager';
 
   let loading = $state(false);
   const disabled = $derived.by(() => {
