@@ -15,5 +15,5 @@
 
 <Label class={cn('flex flex-col gap-1', className)}>
   <span class={cn('select-none font-normal', labelClass)}>{label}</span>
-  <Textarea bind:value class="h-full resize-none" />
+  <Textarea bind:value class="h-full resize-none font-normal" />
 </Label>

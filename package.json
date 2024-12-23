@@ -1,6 +1,6 @@
 {
   "name": "fix-me",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "packageManager": "pnpm@9.15.1",
   "private": true,
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^2.1.1",
+    "@tauri-apps/plugin-clipboard-manager": "^2.2.0",
+    "@tauri-apps/plugin-dialog": "^2.2.0",
     "@tauri-apps/plugin-process": "^2.2.0",
     "@tb-dev/utils": "^4.1.0",
     "mode-watcher": "^0.5.0",

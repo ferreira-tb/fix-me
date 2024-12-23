@@ -22,6 +22,8 @@ fn main() {
     .plugin(svelte())
     .plugin(prevent_default())
     .plugin(window_state())
+    .plugin(tauri_plugin_clipboard_manager::init())
+    .plugin(tauri_plugin_dialog::init())
     .plugin(tauri_plugin_process::init())
     .setup(|app| setup(app.app_handle()))
     .invoke_handler(specta.invoke_handler())

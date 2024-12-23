@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { message } from '@tauri-apps/plugin-dialog';
+  import { writeText } from '@tauri-apps/plugin-clipboard-manager';
   import { Button } from '$lib/components/ui/button';
   import Textarea from '$lib/components/textarea.svelte';
   import { settings } from '$lib/stores/settings';
@@ -13,10 +15,20 @@
   async function fix() {
     try {
       loading = true;
+      $prompt.answer = null;
       const answer = await commands.prompt($prompt.message);
       $prompt.answer = { text: answer, date: Date.now() };
+      await writeText(answer);
+    } catch (err) {
+      await onError(err);
     } finally {
       loading = false;
+    }
+  }
+
+  async function onError(err: unknown) {
+    if (err instanceof Error) {
+      await message(err.message, { title: 'Error', kind: 'error' });
     }
   }
 </script>

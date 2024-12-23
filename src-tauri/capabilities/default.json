@@ -1,6 +1,14 @@
 {
   "identifier": "default",
   "description": "Capability for the main window",
-  "windows": ["main"],
-  "permissions": ["svelte:default", "core:event:default", "process:allow-exit"]
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "svelte:default",
+    "core:event:default",
+    "process:allow-exit",
+    "clipboard-manager:allow-write-text",
+    "dialog:default"
+  ]
 }
