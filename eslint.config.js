@@ -8,6 +8,9 @@ export default defineConfig({
     vue: false,
   },
   overrides: {
+    javascript: {
+      'no-undefined': 'off',
+    },
     typescript: {
       '@typescript-eslint/consistent-type-definitions': 'off',
     },
