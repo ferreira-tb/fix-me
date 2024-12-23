@@ -21,8 +21,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0(svelte@5.15.0)
       tauri-plugin-svelte:
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.2
+        version: 0.1.2
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^3.0.8
@@ -1589,8 +1589,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  tauri-plugin-svelte@0.1.1:
-    resolution: {integrity: sha512-6iv2MJYaNB6HFqLv4s/VQuDG0qARXl/HURjksXMidvnH8ZVv3K7jhrweJywjkWG6I+2CGc2fbDoLYWvefbMRbg==}
+  tauri-plugin-svelte@0.1.2:
+    resolution: {integrity: sha512-4c9D9NQDAIIkwyRtTllrL8OMX1nBl3ktDtMuNERCaRJ9BYT+kJywV/o7cFjI+QRtwGF0xlJNJnb/oQwqNkHbJw==}
 
   thenify-all@1.6.0:
     resolution: {integrity: sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==}
@@ -3156,7 +3156,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  tauri-plugin-svelte@0.1.1:
+  tauri-plugin-svelte@0.1.2:
     dependencies:
       '@tauri-apps/api': 2.1.1
       '@tauri-store/shared': 0.3.0

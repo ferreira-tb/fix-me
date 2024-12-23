@@ -3847,9 +3847,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-svelte"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e6abfaa9a4d5e21a977a4415b8a8271f603122608cbaf2f879aedf789b9d611"
+checksum = "d6f2f1fcf9d112c537940ba6a37944cd2e15da827147d073dd520ac2045451d0"
 dependencies = [
  "serde",
  "tauri",
