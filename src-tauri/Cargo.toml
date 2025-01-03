@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "1.1.1"
+version = "1.1.2"
 publish = false
 
 [package.edition]
@@ -20,7 +20,7 @@ features = []
 anyhow = "1.0"
 futures = "0.3"
 http = "1.2"
-itertools = "0.13"
+itertools = "0.14"
 serde_json = "1.0"
 specta-typescript = "0.0.7"
 tauri-plugin-clipboard-manager = "2.2"
@@ -47,7 +47,7 @@ version = "0.26"
 features = ["derive"]
 
 [dependencies.tauri]
-version = "2.1"
+version = "2.2"
 features = ["protocol-asset"]
 
 [dependencies.tauri-plugin-prevent-default]
