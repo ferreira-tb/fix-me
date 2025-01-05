@@ -6,8 +6,7 @@
   import { onMount, type Snippet } from 'svelte';
   import { settings } from '$lib/stores/settings';
   import { exit } from '@tauri-apps/plugin-process';
-  import * as Sidebar from '$lib/components/ui/sidebar';
-  import AppSidebar from '$lib/components/sidebar.svelte';
+  import { Sidebar } from '$lib/components/sidebar';
 
   const { children }: { children: Snippet } = $props();
 
@@ -26,10 +25,9 @@
 
 <svelte:window onkeydown={onKeyDown} />
 
-<Sidebar.Provider>
-  <AppSidebar />
+<Sidebar>
   <main class="h-screen w-full">
     <ModeWatcher defaultMode="dark" />
     {@render children()}
   </main>
-</Sidebar.Provider>
+</Sidebar>

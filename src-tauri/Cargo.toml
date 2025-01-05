@@ -3,6 +3,9 @@ name = "fix-me"
 version = "1.2.0"
 publish = false
 
+[package.authors]
+workspace = true
+
 [package.edition]
 workspace = true
 
@@ -51,7 +54,13 @@ features = ["derive"]
 
 [dependencies.tauri]
 version = "~2.1"
-features = ["devtools", "image-png", "protocol-asset", "rustls-tls", "tray-icon"]
+features = [
+  "devtools",
+  "image-png",
+  "protocol-asset",
+  "rustls-tls",
+  "tray-icon",
+]
 
 [dependencies.tauri-plugin-prevent-default]
 version = "1.0"
