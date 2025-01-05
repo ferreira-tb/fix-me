@@ -4,7 +4,11 @@ use tauri_specta::{collect_commands, Builder as SpectaBuilder, ErrorHandlingMode
 pub fn collect() -> SpectaBuilder {
   let builder = SpectaBuilder::new()
     .error_handling(ErrorHandlingMode::Throw)
-    .commands(collect_commands![command::prompt, command::show_window]);
+    .commands(collect_commands![
+      command::create_tray_icon,
+      command::prompt,
+      command::show_window
+    ]);
 
   #[cfg(debug_assertions)]
   export(&builder);

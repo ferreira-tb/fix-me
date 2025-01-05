@@ -19,6 +19,7 @@
     // prettier-ignore
     void settings.start()
       .then(() => prompt.start())
+      .then(() => commands.createTrayIcon())
       .then(() => commands.showWindow());
   });
 </script>
