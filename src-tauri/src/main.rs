@@ -9,16 +9,23 @@ mod command;
 mod error;
 mod http;
 mod llm;
+mod manager;
+
+#[cfg(not(target_os = "linux"))]
+mod tray;
 
 use error::{BoxResult, Result};
 use llm::Llm;
+use manager::ManagerExt;
 use std::time::Duration;
 use tauri::plugin::TauriPlugin;
+use tauri::WindowEvent::{self, CloseRequested};
 use tauri::{AppHandle, Manager, WebviewUrl, WebviewWindowBuilder, Wry};
 
 fn main() {
   let specta = api::collect();
   tauri::Builder::default()
+    .plugin(single_instance())
     .plugin(svelte())
     .plugin(prevent_default())
     .plugin(window_state())
@@ -39,7 +46,9 @@ fn setup(app: &AppHandle) -> BoxResult<()> {
 
 fn open_window(app: &AppHandle) -> Result<()> {
   let url = WebviewUrl::App("index.html".into());
-  WebviewWindowBuilder::new(app, "main", url)
+
+  #[cfg_attr(target_os = "linux", allow(unused_variables))]
+  let window = WebviewWindowBuilder::new(app, "main", url)
     .title("Fix Me")
     .inner_size(800.0, 600.0)
     .resizable(false)
@@ -47,6 +56,9 @@ fn open_window(app: &AppHandle) -> Result<()> {
     .minimizable(true)
     .visible(false)
     .build()?;
+
+  #[cfg(not(target_os = "linux"))]
+  window.on_window_event(on_window_event(app));
 
   Ok(())
 }
@@ -74,10 +86,27 @@ fn prevent_default() -> TauriPlugin<Wry> {
   tauri_plugin_prevent_default::init()
 }
 
+fn single_instance() -> TauriPlugin<Wry> {
+  tauri_plugin_single_instance::init(|app, _, _| {
+    app.main_window().show().unwrap();
+  })
+}
+
 fn window_state() -> TauriPlugin<Wry> {
   use tauri_plugin_window_state::StateFlags as Flags;
 
   tauri_plugin_window_state::Builder::new()
     .with_state_flags(Flags::POSITION)
     .build()
+}
+
+#[cfg(not(target_os = "linux"))]
+fn on_window_event(app: &AppHandle) -> impl Fn(&WindowEvent) {
+  let app = app.clone();
+  move |event| {
+    if let CloseRequested { api, .. } = event {
+      api.prevent_close();
+      app.main_window().hide().unwrap();
+    }
+  }
 }

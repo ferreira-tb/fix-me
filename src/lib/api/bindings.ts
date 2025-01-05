@@ -5,6 +5,9 @@
 
 
 export const commands = {
+async createTrayIcon() : Promise<null> {
+    return await TAURI_INVOKE("create_tray_icon");
+},
 async prompt(prompt: string) : Promise<string> {
     return await TAURI_INVOKE("prompt", { prompt });
 },
