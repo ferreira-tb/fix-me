@@ -19,7 +19,6 @@ use llm::Llm;
 use manager::ManagerExt;
 use std::time::Duration;
 use tauri::plugin::TauriPlugin;
-use tauri::WindowEvent::{self, CloseRequested};
 use tauri::{AppHandle, Manager, WebviewUrl, WebviewWindowBuilder, Wry};
 
 fn main() {
@@ -101,7 +100,8 @@ fn window_state() -> TauriPlugin<Wry> {
 }
 
 #[cfg(not(target_os = "linux"))]
-fn on_window_event(app: &AppHandle) -> impl Fn(&WindowEvent) {
+fn on_window_event(app: &AppHandle) -> impl Fn(&tauri::WindowEvent) {
+  use tauri::WindowEvent::CloseRequested;
   let app = app.clone();
   move |event| {
     if let CloseRequested { api, .. } = event {

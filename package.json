@@ -12,7 +12,6 @@
     "dev": "cargo tauri dev",
     "eslint": "eslint . --config eslint.config.js",
     "format": "prettier . --write && cargo fmt --all",
-    "type-check": "pnpm run -r --bail type-check",
     "update": "miho update major -t",
     "vite:build": "vite build",
     "vite:dev": "vite dev"
