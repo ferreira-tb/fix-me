@@ -6,7 +6,7 @@ use tauri::{include_image, AppHandle, Manager, Wry};
 
 const ID: &str = "fix-me-tray-icon";
 
-pub struct TrayMenu(pub Menu<Wry>);
+struct TrayMenu(Menu<Wry>);
 
 impl TrayMenu {
   pub fn new<M: ManagerExt>(app: &M) -> Result<Self> {
