@@ -1,6 +1,6 @@
 {
   "productName": "fix-me",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "identifier": "tsukilabs.fix-me",
   "build": {
     "beforeDevCommand": "pnpm run vite:dev",
@@ -16,7 +16,9 @@
       },
       "csp": {
         "default-src": "'self'",
-        "connect-src": "ipc: http://ipc.localhost"
+        "connect-src": "ipc: http://ipc.localhost",
+        "img-src": "* blob:",
+        "style-src": "'self' 'unsafe-inline'"
       }
     }
   },

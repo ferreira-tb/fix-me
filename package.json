@@ -1,8 +1,8 @@
 {
   "name": "fix-me",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@9.15.3",
   "private": true,
   "scripts": {
     "build": "cargo tauri build",
@@ -27,9 +27,9 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.8",
-    "@sveltejs/kit": "^2.15.1",
+    "@sveltejs/kit": "^2.15.2",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "@tb-dev/eslint-config": "^6.0.3",
+    "@tb-dev/eslint-config": "^6.0.7",
     "@types/node": "^22.10.5",
     "autoprefixer": "^10.4.20",
     "bits-ui": "^1.0.0-next.77",
@@ -41,7 +41,7 @@
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-svelte": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "svelte": "^5.16.1",
+    "svelte": "^5.16.5",
     "svelte-check": "^4.1.1",
     "tailwind-merge": "^2.6.0",
     "tailwind-variants": "^0.3.0",
