@@ -7,11 +7,14 @@
   const route = $derived.by(() => page.route.id);
   const routeName = $derived.by(() => {
     switch (route) {
+      case '/':
+        return 'Chat';
+      case '/history':
+        return 'History';
       case '/settings':
         return 'Settings';
-      case '/':
       default:
-        return 'Chat';
+        throw new Error(`unknown route: ${route}`);
     }
   });
 </script>
@@ -34,6 +37,9 @@
         <DropdownMenu.Content side="top" class="w-[--bits-dropdown-menu-anchor-width]">
           <DropdownMenu.Item>
             <a href="/" class="w-full">Chat</a>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item>
+            <a href="/history" class="w-full">History</a>
           </DropdownMenu.Item>
           <DropdownMenu.Item>
             <a href="/settings" class="w-full">Settings</a>

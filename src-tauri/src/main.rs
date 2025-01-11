@@ -74,7 +74,10 @@ fn svelte() -> TauriPlugin<Wry> {
 
 #[cfg(windows)]
 fn prevent_default() -> TauriPlugin<Wry> {
+  use tauri_plugin_prevent_default::Flags;
+
   tauri_plugin_prevent_default::Builder::new()
+    .with_flags(Flags::all().difference(Flags::DEV_TOOLS | Flags::RELOAD))
     .general_autofill(false)
     .password_autosave(false)
     .build()
@@ -82,7 +85,11 @@ fn prevent_default() -> TauriPlugin<Wry> {
 
 #[cfg(not(windows))]
 fn prevent_default() -> TauriPlugin<Wry> {
-  tauri_plugin_prevent_default::init()
+  use tauri_plugin_prevent_default::Flags;
+
+  tauri_plugin_prevent_default::Builder::new()
+    .with_flags(Flags::all().difference(Flags::DEV_TOOLS | Flags::RELOAD))
+    .build()
 }
 
 fn single_instance() -> TauriPlugin<Wry> {

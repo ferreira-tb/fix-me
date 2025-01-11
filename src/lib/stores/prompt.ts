@@ -21,4 +21,4 @@ const options: TauriPluginSvelteStoreOptions = {
   syncStrategy: 'debounce',
 };
 
-export const prompt = store<Prompt>('prompt', state, options);
+export const prompt = store('prompt', state, options);

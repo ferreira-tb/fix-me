@@ -3,6 +3,7 @@
   import { commands } from '$lib/api';
   import { ModeWatcher } from 'mode-watcher';
   import { prompt } from '$lib/stores/prompt';
+  import { history } from '$lib/stores/history';
   import { onMount, type Snippet } from 'svelte';
   import { settings } from '$lib/stores/settings';
   import { exit } from '@tauri-apps/plugin-process';
@@ -18,6 +19,7 @@
     // prettier-ignore
     void settings.start()
       .then(() => prompt.start())
+      .then(() => history.start())
       .then(() => commands.createTrayIcon())
       .then(() => commands.showWindow());
   });
