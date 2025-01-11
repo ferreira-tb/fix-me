@@ -1,9 +1,7 @@
 {
   "identifier": "default",
   "description": "Capability for the main window",
-  "windows": [
-    "main"
-  ],
+  "windows": ["main"],
   "permissions": [
     "svelte:default",
     "core:event:default",

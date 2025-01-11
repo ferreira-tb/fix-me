@@ -1,9 +1,10 @@
 <script lang="ts">
   import { commands } from '$lib/api';
+  import { onError } from '$lib/utils';
   import { prompt } from '$lib/stores/prompt';
+  import { history } from '$lib/stores/history';
   import { settings } from '$lib/stores/settings';
   import { Button } from '$lib/components/ui/button';
-  import { message } from '@tauri-apps/plugin-dialog';
   import Textarea from '$lib/components/textarea.svelte';
   import { writeText } from '@tauri-apps/plugin-clipboard-manager';
 
@@ -15,20 +16,21 @@
   async function fix() {
     try {
       loading = true;
-      $prompt.answer = null;
-      const answer = await commands.prompt($prompt.message);
-      $prompt.answer = { text: answer, date: Date.now() };
-      await writeText(answer);
+      const answerText = await commands.prompt($prompt.message);
+      const answer = { text: answerText, date: Date.now() };
+      $prompt.answer = answer;
+
+      const answers = [...$history.answers, answer];
+      answers.sort((a, b) => b.date - a.date);
+      while (answers.length > 10) answers.pop();
+      $history.answers = answers;
+
+      await writeText(answerText);
     } catch (err) {
-      await onError(err);
+      $prompt.answer = null;
+      onError(err);
     } finally {
       loading = false;
-    }
-  }
-
-  async function onError(err: unknown) {
-    if (err instanceof Error) {
-      await message(err.message, { title: 'Error', kind: 'error' });
     }
   }
 </script>

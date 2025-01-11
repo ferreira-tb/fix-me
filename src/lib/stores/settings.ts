@@ -22,4 +22,4 @@ const options: TauriPluginSvelteStoreOptions = {
   saveOnChange: true,
 };
 
-export const settings = store<Settings>('settings', state, options);
+export const settings = store('settings', state, options);
