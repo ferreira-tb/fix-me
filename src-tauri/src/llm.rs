@@ -26,7 +26,7 @@ impl Llm {
     let settings = self
       .app
       .svelte()
-      .try_store_state::<Settings>("settings")?;
+      .try_state::<Settings>("settings")?;
 
     let Some(token) = settings.token.as_deref() else {
       bail!("unauthorized: missing token");
