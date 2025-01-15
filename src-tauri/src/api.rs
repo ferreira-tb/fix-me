@@ -22,7 +22,6 @@ fn export(specta: &SpectaBuilder) {
 
   let ts = Typescript::default()
     .bigint(BigIntExportBehavior::BigInt)
-    .remove_default_header()
     .header("// @ts-nocheck");
 
   specta
