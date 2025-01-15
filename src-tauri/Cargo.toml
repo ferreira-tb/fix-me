@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "1.3.0"
+version = "1.3.1"
 publish = false
 
 [package.authors]
@@ -25,15 +25,13 @@ futures = "0.3"
 http = "1.2"
 itertools = "0.14"
 serde_json = "1.0"
-specta-typescript = "=0.0.7"
+specta-typescript = "=0.0.9"
 tauri-plugin-clipboard-manager = "2.2"
 tauri-plugin-dialog = "2.2"
 tauri-plugin-process = "2.2"
 tauri-plugin-single-instance = "2.2"
 tauri-plugin-svelte = "0.2"
 tauri-plugin-window-state = "2.2"
-tauri-runtime = "~2.3"
-tauri-runtime-wry = "~2.3"
 thiserror = "2.0"
 
 [dependencies.reqwest]
@@ -45,7 +43,7 @@ version = "1.0"
 features = ["derive"]
 
 [dependencies.specta]
-version = "=2.0.0-rc.20"
+version = "=2.0.0-rc.22"
 features = ["serde", "serde_json"]
 
 [dependencies.strum]
@@ -61,7 +59,7 @@ version = "1.0"
 features = ["unstable-native-windows"]
 
 [dependencies.tauri-specta]
-version = "=2.0.0-rc.20"
+version = "=2.0.0-rc.21"
 features = ["derive", "typescript"]
 
 [dependencies.tokio]
