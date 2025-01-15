@@ -1,6 +1,6 @@
 [workspace]
 members = ["src-tauri"]
-resolver = "2"
+resolver = "3"
 
 [workspace.package]
 homepage = "https://github.com/ferreira-tb/fix-me"
