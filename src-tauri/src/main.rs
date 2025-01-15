@@ -107,7 +107,7 @@ fn window_state() -> TauriPlugin<Wry> {
 }
 
 #[cfg(not(target_os = "linux"))]
-fn on_window_event(app: &AppHandle) -> impl Fn(&tauri::WindowEvent) {
+fn on_window_event(app: &AppHandle) -> impl Fn(&tauri::WindowEvent) + use<> {
   use tauri::WindowEvent::CloseRequested;
   let app = app.clone();
   move |event| {
