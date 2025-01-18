@@ -2,12 +2,12 @@
   import '../app.css';
   import { commands } from '$lib/api';
   import { ModeWatcher } from 'mode-watcher';
-  import { prompt } from '$lib/stores/prompt';
-  import { history } from '$lib/stores/history';
   import { onMount, type Snippet } from 'svelte';
   import { settings } from '$lib/stores/settings';
   import { exit } from '@tauri-apps/plugin-process';
   import { Sidebar } from '$lib/components/sidebar';
+  import { prompt } from '$lib/stores/prompt.svelte';
+  import { history } from '$lib/stores/history.svelte';
 
   const { children }: { children: Snippet } = $props();
 

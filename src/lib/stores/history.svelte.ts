@@ -1,5 +1,5 @@
-import type { Answer } from './prompt';
-import { store, type TauriPluginSvelteStoreOptions } from 'tauri-plugin-svelte';
+import type { Answer } from './prompt.svelte';
+import { RuneStore, type TauriPluginSvelteStoreOptions } from 'tauri-plugin-svelte';
 
 export type History = {
   answers: Answer[];
@@ -15,4 +15,4 @@ const options: TauriPluginSvelteStoreOptions = {
   syncStrategy: 'debounce',
 };
 
-export const history = store('history', state, options);
+export const history = new RuneStore('history', state, options);

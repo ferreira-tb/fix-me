@@ -1,4 +1,4 @@
-import { store, type TauriPluginSvelteStoreOptions } from 'tauri-plugin-svelte';
+import { RuneStore, type TauriPluginSvelteStoreOptions } from 'tauri-plugin-svelte';
 
 export type Prompt = {
   answer: Answer | null;
@@ -21,4 +21,4 @@ const options: TauriPluginSvelteStoreOptions = {
   syncStrategy: 'debounce',
 };
 
-export const prompt = store('prompt', state, options);
+export const prompt = new RuneStore('prompt', state, options);

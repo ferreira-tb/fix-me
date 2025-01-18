@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onError } from '$lib/utils';
-  import { history } from '$lib/stores/history';
   import * as Card from '$lib/components/ui/card';
   import { Button } from '$lib/components/ui/button';
+  import { history } from '$lib/stores/history.svelte';
   import { writeText } from '@tauri-apps/plugin-clipboard-manager';
 
   function date(time: number) {
@@ -14,13 +14,15 @@
   }
 
   function remove(time: number) {
-    $history.answers = $history.answers.filter((answer) => answer.date !== time);
+    history.state.answers = $state
+      .snapshot(history.state)
+      .answers.filter((answer) => answer.date !== time);
   }
 </script>
 
 <div class="h-screen overflow-y-auto overflow-x-hidden p-4">
   <div class="space-y-2">
-    {#each $history.answers as answer (answer.date)}
+    {#each history.state.answers as answer (answer.date)}
       <Card.Root>
         <Card.Header class="px-4 pb-2 pt-4">
           <Card.Title>{date(answer.date)}</Card.Title>
