@@ -1110,7 +1110,7 @@ dependencies = [
 
 [[package]]
 name = "fix-me"
-version = "1.3.1"
+version = "1.3.2"
 dependencies = [
  "anyhow",
  "futures",
@@ -4399,9 +4399,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-svelte"
-version = "0.2.0"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb46607ce1dd7cc1dfea798968730f90e4cb7e23bb03a066b6dc42c5d62796c6"
+checksum = "b8f0e378867d6c76d35cef3cc7ca8e1833fd20e3757653cbefb8935c6bf94149"
 dependencies = [
  "serde",
  "tauri",
@@ -4500,12 +4500,13 @@ dependencies = [
 
 [[package]]
 name = "tauri-store"
-version = "0.6.0"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d9ff3750091059bda80656713219879f46c18263b35ac4d84fbe16645bb6888"
+checksum = "0b17cd2def1ecc4d971a5c13178eb5965e5596b748d967501a76e93d271dbfee"
 dependencies = [
  "dashmap",
  "futures",
+ "itertools",
  "serde",
  "serde_json",
  "tauri",
@@ -4519,9 +4520,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-store-macros"
-version = "0.6.0"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "358a42ca935dcd7bccc3798d4db6bd7bef4842c9eaa2981a75a869f85e7307f3"
+checksum = "af8fbaaedc59d2663fecf4262332205db384c595fad75cff777d5bd8c482e175"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4530,9 +4531,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-store-utils"
-version = "0.1.0"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b75112240c132a749532d8b54b1871682555634eaa20901e42f0f4329879b904"
+checksum = "57a08304ae67156d253c74f720048a7a2b3583a61514560a817da9691b17231e"
 dependencies = [
  "futures",
  "tauri",
