@@ -10,7 +10,7 @@ const state: History = {
   answers: [],
 };
 
-const options: TauriPluginSvelteStoreOptions = {
+const options: TauriPluginSvelteStoreOptions<History> = {
   saveOnChange: true,
   syncInterval: 200,
   syncStrategy: 'debounce',

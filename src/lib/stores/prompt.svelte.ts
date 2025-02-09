@@ -16,7 +16,7 @@ const state: Prompt = {
   message: '',
 };
 
-const options: TauriPluginSvelteStoreOptions = {
+const options: TauriPluginSvelteStoreOptions<Prompt> = {
   saveOnChange: true,
   syncInterval: 200,
   syncStrategy: 'debounce',

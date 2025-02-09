@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "1.3.3"
+version = "1.3.4"
 publish = false
 
 [package.authors]
@@ -11,6 +11,10 @@ workspace = true
 
 [package.rust-version]
 workspace = true
+
+[lib]
+name = "fix_me_lib"
+crate-type = ["cdylib", "rlib", "staticlib"]
 
 [lints]
 workspace = true
@@ -30,7 +34,7 @@ tauri-plugin-clipboard-manager = "2.2"
 tauri-plugin-dialog = "2.2"
 tauri-plugin-process = "2.2"
 tauri-plugin-single-instance = "2.2"
-tauri-plugin-svelte = "1.1"
+tauri-plugin-svelte = "1.2"
 tauri-plugin-window-state = "2.2"
 thiserror = "2.0"
 
@@ -47,7 +51,7 @@ version = "=2.0.0-rc.22"
 features = ["serde", "serde_json"]
 
 [dependencies.strum]
-version = "0.26"
+version = "0.27"
 features = ["derive"]
 
 [dependencies.tauri]
@@ -55,8 +59,8 @@ version = "~2.2"
 features = ["devtools", "image-png", "protocol-asset", "rustls-tls", "tray-icon"]
 
 [dependencies.tauri-plugin-prevent-default]
-version = "1.0"
-features = ["unstable-native-windows"]
+version = "1.1"
+features = ["unstable-windows"]
 
 [dependencies.tauri-specta]
 version = "=2.0.0-rc.21"

@@ -18,7 +18,7 @@ const state: Settings = {
   formality: false,
 };
 
-const options: TauriPluginSvelteStoreOptions = {
+const options: TauriPluginSvelteStoreOptions<Settings> = {
   saveOnChange: true,
 };
 
