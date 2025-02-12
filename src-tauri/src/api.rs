@@ -1,5 +1,5 @@
 use crate::command;
-use tauri_specta::{collect_commands, Builder as SpectaBuilder, ErrorHandlingMode};
+use tauri_specta::{Builder as SpectaBuilder, ErrorHandlingMode, collect_commands};
 
 pub fn collect() -> SpectaBuilder {
   let builder = SpectaBuilder::new()

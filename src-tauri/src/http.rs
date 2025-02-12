@@ -1,13 +1,13 @@
 use crate::bail;
 use crate::error::Result;
-use reqwest::header::{self, HeaderMap};
 use reqwest::Client;
-use serde::de::DeserializeOwned;
+use reqwest::header::{self, HeaderMap};
 use serde::Serialize;
+use serde::de::DeserializeOwned;
 use std::sync::LazyLock;
 use tauri::async_runtime::spawn;
 use tokio::sync::OwnedSemaphorePermit;
-use tokio::time::{sleep, Duration};
+use tokio::time::{Duration, sleep};
 
 const URL: &str = "https://api.openai.com/v1/chat/completions";
 const USER_AGENT: &str = concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VERSION"));

@@ -2,7 +2,7 @@ use crate::error::Result;
 use crate::manager::ManagerExt;
 use tauri::menu::{Menu, MenuBuilder, PredefinedMenuItem};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIcon, TrayIconBuilder, TrayIconEvent};
-use tauri::{include_image, AppHandle, Manager, Wry};
+use tauri::{AppHandle, Manager, Wry, include_image};
 
 const ID: &str = "fix-me-tray-icon";
 

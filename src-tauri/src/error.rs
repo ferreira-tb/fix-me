@@ -1,5 +1,5 @@
-use serde::ser::Serializer;
 use serde::Serialize;
+use serde::ser::Serializer;
 use std::error::Error as StdError;
 pub use std::result::Result as StdResult;
 
