@@ -42,10 +42,11 @@ fn setup(app: &AppHandle) -> BoxResult<()> {
 
 fn open_window(app: &AppHandle) -> Result<()> {
   let url = WebviewUrl::App("index.html".into());
+  let title = format!("{} {}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"));
 
   #[cfg_attr(target_os = "linux", allow(unused_variables))]
   let window = WebviewWindowBuilder::new(app, "main", url)
-    .title("Fix Me")
+    .title(&title)
     .inner_size(800.0, 600.0)
     .resizable(false)
     .maximizable(false)
