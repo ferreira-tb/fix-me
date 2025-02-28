@@ -8,12 +8,12 @@ repository = "https://github.com/ferreira-tb/fix-me"
 authors = ["Andrew Ferreira <andrew.shien2@gmail.com>"]
 license = "MIT"
 edition = "2024"
-rust-version = "1.86"
+rust-version = "1.87"
 publish = false
 
 [profile.release]
 codegen-units = 1
-lto = "thin"
+lto = "fat"
 opt-level = 3
 strip = "symbols"
 

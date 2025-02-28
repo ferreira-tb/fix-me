@@ -111,10 +111,13 @@ fn build_prompt(settings: &Settings, prompt: String) -> Prompt {
     .content
     .push_str("Your answer should contain only the modified text and nothing else.");
 
-  Prompt::with_messages([dev_message, Message {
-    role: Role::User,
-    content: prompt.trim().into(),
-  }])
+  Prompt::with_messages([
+    dev_message,
+    Message {
+      role: Role::User,
+      content: prompt.trim().into(),
+    },
+  ])
 }
 
 #[derive(Deserialize)]
