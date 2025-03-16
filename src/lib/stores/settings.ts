@@ -1,4 +1,4 @@
-import { store, type TauriPluginSvelteStoreOptions } from 'tauri-plugin-svelte';
+import { store, type TauriPluginSvelteStoreOptions } from '@tauri-store/svelte';
 
 export type Settings = {
   formality: boolean;

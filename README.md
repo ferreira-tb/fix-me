@@ -1,6 +1,6 @@
 # fix-me
 
-This is a demo showcase for [`tauri-plugin-svelte`](https://tb.dev.br/tauri-store/guide/getting-started?plugin=tauri-plugin-svelte), a Tauri plugin providing persistent stores for Svelte apps.
+This is a demo showcase for [`@tauri-store/svelte`](https://tb.dev.br/tauri-store/plugin-svelte/guide/getting-started), a Tauri plugin providing persistent stores for Svelte apps.
 
 ## Usage
 

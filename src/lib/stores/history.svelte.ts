@@ -1,6 +1,5 @@
 import type { Answer } from './prompt.svelte';
-import { RuneStore } from 'tauri-plugin-svelte/runes';
-import type { TauriPluginSvelteStoreOptions } from 'tauri-plugin-svelte';
+import { RuneStore, type TauriPluginSvelteStoreOptions } from '@tauri-store/svelte';
 
 export type History = {
   answers: Answer[];

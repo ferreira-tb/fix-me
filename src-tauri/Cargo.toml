@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "1.3.7"
+version = "1.3.8"
 publish = false
 
 [package.authors]
@@ -26,7 +26,7 @@ features = []
 [dependencies]
 anyhow = "1.0"
 futures = "0.3"
-http = "1.2"
+http = "1.3"
 itertools = "0.14"
 serde_json = "1.0"
 specta-typescript = "=0.0.9"
@@ -34,7 +34,7 @@ tauri-plugin-clipboard-manager = "2.2"
 tauri-plugin-dialog = "2.2"
 tauri-plugin-process = "2.2"
 tauri-plugin-single-instance = "2.2"
-tauri-plugin-svelte = "1.2"
+tauri-plugin-svelte = "2.0"
 tauri-plugin-window-state = "2.2"
 thiserror = "2.0"
 
@@ -67,5 +67,5 @@ version = "=2.0.0-rc.21"
 features = ["derive", "typescript"]
 
 [dependencies.tokio]
-version = "1.43"
+version = "1.44"
 features = ["full"]
