@@ -8,7 +8,7 @@ repository = "https://github.com/ferreira-tb/fix-me"
 authors = ["Andrew Ferreira <andrew.shien2@gmail.com>"]
 license = "MIT"
 edition = "2024"
-rust-version = "1.87"
+rust-version = "1.86"
 publish = false
 
 [profile.release]
@@ -16,6 +16,14 @@ codegen-units = 1
 lto = "fat"
 opt-level = 3
 strip = "symbols"
+
+[profile.preview]
+inherits = "release"
+codegen-units = 16
+lto = "off"
+opt-level = 0
+debug = true
+debug-assertions = true
 
 [workspace.lints.rust]
 async_fn_in_trait = "allow"

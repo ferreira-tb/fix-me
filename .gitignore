@@ -30,7 +30,5 @@ rustc-ice-*.txt
 .temp/
 **/*vite*timestamp*
 .eslintcache
-.svelte-kit
-.output
 
 workspace.md

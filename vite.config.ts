@@ -1,26 +1,27 @@
-import tailwind from 'tailwindcss';
 import { defineConfig } from 'vite';
-import autoprefixer from 'autoprefixer';
-import { sveltekit } from '@sveltejs/kit/vite';
+import vue from '@vitejs/plugin-vue';
+import tailwind from '@tailwindcss/vite';
+import { fileURLToPath, URL } from 'node:url';
 
-export default defineConfig({
+export default defineConfig(async () => ({
+  plugins: [vue(), tailwind()],
   clearScreen: false,
-  plugins: [sveltekit()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('src', import.meta.url)),
+    },
+  },
   server: {
-    port: 1422,
+    port: 1420,
     strictPort: true,
     watch: {
       ignored: ['**/src-tauri/**'],
     },
   },
-  css: {
-    postcss: {
-      plugins: [tailwind(), autoprefixer()],
-    },
-  },
   build: {
+    outDir: 'dist',
     emptyOutDir: true,
-    minify: false,
+    minify: true,
     target: 'esnext',
   },
-});
+}));

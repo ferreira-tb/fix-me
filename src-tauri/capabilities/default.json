@@ -3,7 +3,7 @@
   "description": "Capability for the main window",
   "windows": ["main"],
   "permissions": [
-    "svelte:default",
+    "pinia:default",
     "core:event:default",
     "process:allow-exit",
     "clipboard-manager:allow-write-text",

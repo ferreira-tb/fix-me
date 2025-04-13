@@ -2,10 +2,9 @@ import { defineConfig } from '@tb-dev/eslint-config';
 
 export default defineConfig({
   project: ['./tsconfig.json'],
-  ignores: ['src/lib/components/ui/*', '**/lib/api/bindings.ts'],
+  ignores: ['**/lib/api/bindings.ts'],
   features: {
-    svelte: true,
-    vue: false,
+    vue: true,
   },
   overrides: {
     javascript: {
