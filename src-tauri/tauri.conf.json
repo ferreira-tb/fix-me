@@ -1,12 +1,12 @@
 {
   "productName": "fix-me",
-  "version": "1.3.10",
+  "version": "2.0.0",
   "identifier": "tsukilabs.fix-me",
   "build": {
     "beforeDevCommand": "pnpm run vite:dev",
     "beforeBuildCommand": "pnpm run vite:build",
     "frontendDist": "../dist",
-    "devUrl": "http://localhost:1422"
+    "devUrl": "http://localhost:1420"
   },
   "app": {
     "withGlobalTauri": false,

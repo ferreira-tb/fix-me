@@ -1,13 +1,7 @@
-import { twMerge } from 'tailwind-merge';
-import { type ClassValue, clsx } from 'clsx';
-import { message } from '@tauri-apps/plugin-dialog';
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+import { type MessageDialogOptions, message as showMessage } from '@tauri-apps/plugin-dialog';
 
 export function onError(err: unknown) {
-  if (err instanceof Error) {
-    void message(err.message, { title: 'Error', kind: 'error' });
-  }
+  const options: MessageDialogOptions = { title: 'Error', kind: 'error' };
+  const message = err instanceof Error ? err.message : String(err);
+  showMessage(message, options).catch(console.error);
 }

@@ -13,10 +13,10 @@ pub enum Error {
   Io(#[from] std::io::Error),
   #[error("Json: {0}")]
   Json(#[from] serde_json::Error),
+  #[error("Pinia: {0}")]
+  Pinia(#[from] tauri_plugin_pinia::Error),
   #[error("Reqwest: {0}")]
   Reqwest(#[from] reqwest::Error),
-  #[error("Svelte: {0}")]
-  Svelte(#[from] tauri_plugin_svelte::Error),
   #[error("Tauri: {0}")]
   Tauri(#[from] tauri::Error),
   #[error("{0}")]

@@ -22,7 +22,7 @@ pub fn run() {
   let specta = api::collect();
   tauri::Builder::default()
     .plugin(single_instance())
-    .plugin(svelte())
+    .plugin(pinia())
     .plugin(prevent_default())
     .plugin(window_state())
     .plugin(tauri_plugin_clipboard_manager::init())
@@ -59,10 +59,10 @@ fn open_window(app: &AppHandle) -> Result<()> {
   Ok(())
 }
 
-fn svelte() -> TauriPlugin<Wry> {
-  use tauri_plugin_svelte::SaveStrategy;
+fn pinia() -> TauriPlugin<Wry> {
+  use tauri_plugin_pinia::SaveStrategy;
 
-  tauri_plugin_svelte::Builder::new()
+  tauri_plugin_pinia::Builder::new()
     .autosave(Duration::from_mins(5))
     .default_save_strategy(SaveStrategy::debounce_secs(1))
     .pretty(true)

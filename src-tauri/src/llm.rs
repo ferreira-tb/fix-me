@@ -6,7 +6,7 @@ use serde_json::Value as Json;
 use std::sync::Arc;
 use strum::Display;
 use tauri::AppHandle;
-use tauri_plugin_svelte::ManagerExt;
+use tauri_plugin_pinia::ManagerExt;
 use tokio::sync::{OwnedSemaphorePermit, Semaphore};
 
 pub struct Llm {
@@ -25,7 +25,7 @@ impl Llm {
   pub async fn prompt(&self, prompt: String) -> Result<String> {
     let settings = self
       .app
-      .svelte()
+      .pinia()
       .try_state::<Settings>("settings")?;
 
     let Some(token) = settings.token.as_deref() else {
