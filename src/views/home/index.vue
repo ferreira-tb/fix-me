@@ -49,14 +49,17 @@ async function fix() {
       <Textarea
         v-model="message"
         label="Prompt"
-        label-class="text-secondary-foreground/70 h-full"
+        label-class="text-secondary-foreground/70 h-[calc(100%-50px)]"
       />
-      <div class="flex justify-center gap-2">
+      <div class="flex h-[50px] justify-center gap-2">
         <Button :disabled @click="fix">Fix</Button>
       </div>
     </div>
 
-    <div v-if="answer" class="flex h-3/5 flex-col overflow-x-hidden overflow-y-auto px-2 pb-4">
+    <div
+      v-if="answer"
+      class="flex h-3/5 flex-col overflow-x-hidden overflow-y-auto px-2 pb-4 select-text"
+    >
       <p>{{ answer.text }}</p>
     </div>
   </div>
