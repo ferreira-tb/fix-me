@@ -3,11 +3,18 @@ use crate::{bail, http};
 use anyhow::anyhow;
 use serde::{Deserialize, Serialize};
 use serde_json::Value as Json;
+use specta::Type;
 use std::sync::Arc;
 use strum::Display;
 use tauri::AppHandle;
 use tauri_plugin_pinia::ManagerExt;
 use tokio::sync::{OwnedSemaphorePermit, Semaphore};
+
+pub const DEFAULT_FORMALITY: &str = "Ensure the text is formal.";
+pub const DEFAULT_GRAMMAR: &str = "Fix any grammatical errors.";
+pub const DEFAULT_POLITENESS: &str = "Make sure the text is polite.";
+pub const DEFAULT_READABILITY: &str = "Improve readability.";
+pub const DEFAULT_TONE: &str = "Check the tone used.";
 
 pub struct Llm {
   app: AppHandle,
@@ -77,34 +84,34 @@ fn build_prompt(settings: &Settings, prompt: String) -> Prompt {
     content: content.trim().into(),
   };
 
-  if settings.grammar {
+  if settings.grammar.enabled {
     dev_message
       .content
-      .push_str("Fix any grammatical errors.");
+      .push_str(&settings.grammar.message);
   }
 
-  if settings.readability {
+  if settings.readability.enabled {
     dev_message
       .content
-      .push_str("Improve readability.");
+      .push_str(&settings.readability.message);
   }
 
-  if settings.tone {
+  if settings.tone.enabled {
     dev_message
       .content
-      .push_str("Check the tone used.");
+      .push_str(&settings.tone.message);
   }
 
-  if settings.politeness {
+  if settings.politeness.enabled {
     dev_message
       .content
-      .push_str("Make sure the text is polite.");
+      .push_str(&settings.politeness.message);
   }
 
-  if settings.formality {
+  if settings.formality.enabled {
     dev_message
       .content
-      .push_str("Ensure the text is formal.");
+      .push_str(&settings.formality.message);
   }
 
   dev_message
@@ -120,15 +127,23 @@ fn build_prompt(settings: &Settings, prompt: String) -> Prompt {
   ])
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize, Type)]
 #[serde(rename_all = "camelCase")]
-struct Settings {
-  formality: bool,
-  grammar: bool,
-  politeness: bool,
-  readability: bool,
+pub struct Settings {
+  formality: Criteria,
+  grammar: Criteria,
+  politeness: Criteria,
+  readability: Criteria,
+  tone: Criteria,
+
   token: Option<String>,
-  tone: bool,
+}
+
+#[derive(Deserialize, Serialize, Type)]
+#[serde(rename_all = "camelCase")]
+pub struct Criteria {
+  pub message: String,
+  pub enabled: bool,
 }
 
 #[derive(Default, Serialize)]

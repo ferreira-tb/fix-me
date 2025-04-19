@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "2.0.1"
+version = "2.1.0"
 publish = false
 
 [package.authors]
@@ -32,7 +32,6 @@ serde_json = "1.0"
 specta-typescript = "=0.0.9"
 tauri-plugin-clipboard-manager = "2.2"
 tauri-plugin-dialog = "2.2"
-tauri-plugin-pinia = "3.2"
 tauri-plugin-process = "2.2"
 tauri-plugin-single-instance = "2.2"
 tauri-plugin-window-state = "2.2"
@@ -57,6 +56,10 @@ features = ["derive"]
 [dependencies.tauri]
 version = "~2.5"
 features = ["devtools", "image-png", "protocol-asset", "rustls-tls", "tray-icon"]
+
+[dependencies.tauri-plugin-pinia]
+version = "3.3"
+features = ["unstable-migration"]
 
 [dependencies.tauri-plugin-prevent-default]
 version = "1.3"

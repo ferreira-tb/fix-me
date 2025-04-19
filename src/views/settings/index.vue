@@ -6,9 +6,9 @@ const settings = useSettingsStore();
 </script>
 
 <template>
-  <div class="size-full p-4">
+  <div class="h-screen overflow-x-hidden overflow-y-auto p-4">
     <Textarea
-      v-model.trim="settings.token"
+      v-model="settings.token"
       label="Token"
       label-class="text-secondary-foreground/70 h-36"
     />

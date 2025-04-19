@@ -1,4 +1,4 @@
-type Route = 'home' | 'history' | 'settings';
+type Route = 'home' | 'criteria' | 'history' | 'settings';
 
 type Answer = {
   date: number;

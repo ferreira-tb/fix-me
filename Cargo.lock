@@ -98,7 +98,7 @@ dependencies = [
  "enumflags2",
  "futures-channel",
  "futures-util",
- "rand 0.9.0",
+ "rand 0.9.1",
  "raw-window-handle",
  "serde",
  "serde_repr",
@@ -405,9 +405,9 @@ dependencies = [
 
 [[package]]
 name = "brotli-decompressor"
-version = "4.0.2"
+version = "4.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74fa05ad7d803d413eb8380983b092cbbaf9a85f151b871360e7b00cd7060b37"
+checksum = "a334ef7c9e23abf0ce748e8cd309037da93e606ad52eb372e4ce327a0dcfbdfd"
 dependencies = [
  "alloc-no-stdlib",
  "alloc-stdlib",
@@ -1087,7 +1087,7 @@ dependencies = [
 
 [[package]]
 name = "fix-me"
-version = "2.0.1"
+version = "2.1.0"
 dependencies = [
  "anyhow",
  "futures",
@@ -3141,9 +3141,9 @@ checksum = "dc375e1527247fe1a97d8b7156678dfe7c1af2fc075c9a4db3690ecd2a148068"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.94"
+version = "1.0.95"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a31971752e70b8b2686d7e46ec17fb38dad4051d94024c88df49b667caea9c84"
+checksum = "02b3e5e68a3a1a02aad3ec490a98007cbc13c37cbe84a3cd7b8e406d76e7f778"
 dependencies = [
  "unicode-ident",
 ]
@@ -3194,7 +3194,7 @@ checksum = "b820744eb4dc9b57a3398183639c511b5a26d2ed702cedd3febaa1393caa22cc"
 dependencies = [
  "bytes",
  "getrandom 0.3.2",
- "rand 0.9.0",
+ "rand 0.9.1",
  "ring",
  "rustc-hash",
  "rustls",
@@ -3262,13 +3262,12 @@ dependencies = [
 
 [[package]]
 name = "rand"
-version = "0.9.0"
+version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3779b94aeb87e8bd4e834cee3650289ee9e0d5677f976ecdb6d219e5f4f6cd94"
+checksum = "9fbfd9d094a40bf3ae768db9361049ace4c0e04a4fd6b359518bd7b73a73dd97"
 dependencies = [
  "rand_chacha 0.9.0",
  "rand_core 0.9.3",
- "zerocopy",
 ]
 
 [[package]]
@@ -3863,9 +3862,9 @@ checksum = "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
 
 [[package]]
 name = "signal-hook-registry"
-version = "1.4.2"
+version = "1.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a9e9e0b4211b72e7b8b6e85c807d36c212bdb33ea8587f7569562a84df5465b1"
+checksum = "a1ee1aca2bc74ef9589efa7ccaa0f3752751399940356209b3fd80c078149b5e"
 dependencies = [
  "libc",
 ]
@@ -4413,9 +4412,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-pinia"
-version = "3.2.0"
+version = "3.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "24603584d94eb38771405709a58ce16c4451e9375e957e454a06957cf25c0954"
+checksum = "698b82e48d1a27e4a853dee92d52a05d641835227d7a79924e72e8dfe4997422"
 dependencies = [
  "serde",
  "tauri",
@@ -4426,9 +4425,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-prevent-default"
-version = "1.3.0"
+version = "1.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8c405844d2e9b68b0e00220df59b27b708406d7639f5930269a90f3de83a9967"
+checksum = "20327367bca73bc4a08973592b0e6fe716321566207c52c79234876a5467c4ac"
 dependencies = [
  "bitflags 2.9.0",
  "itertools",
@@ -4560,13 +4559,14 @@ dependencies = [
 
 [[package]]
 name = "tauri-store"
-version = "0.10.2"
+version = "0.10.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5a33c8afdf92c1b177296c0299f6d20116cbce0fa1e2264819fea8c80fd31774"
+checksum = "74fa58a1db9bffdf5cc176204aa89e5181221a95742367716dd1eee3f71a5feb"
 dependencies = [
  "dashmap",
  "futures",
  "itertools",
+ "semver",
  "serde",
  "serde_json",
  "tauri",
@@ -4579,9 +4579,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-store-macros"
-version = "0.10.2"
+version = "0.10.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8857e4240cf6dbabb15fc2d595e92abba404f0a5cce0f3abbfe9316cac4aa99"
+checksum = "defa4a869e8ec707f0787a1622b5cb80d33e2c39735ad1509eee91f18ab22026"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4968,9 +4968,9 @@ dependencies = [
 
 [[package]]
 name = "tray-icon"
-version = "0.20.0"
+version = "0.20.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d433764348e7084bad2c5ea22c96c71b61b17afe3a11645710f533bd72b6a2b5"
+checksum = "9f7eee98ec5c90daf179d55c20a49d8c0d043054ce7c26336c09a24d31f14fa0"
 dependencies = [
  "crossbeam-channel",
  "dirs",

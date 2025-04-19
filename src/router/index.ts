@@ -9,6 +9,11 @@ export const router = createRouter({
       path: '/',
     },
     {
+      component: () => import('@/views/criteria/index.vue'),
+      name: 'criteria' satisfies Route,
+      path: '/criteria',
+    },
+    {
       component: () => import('@/views/history/index.vue'),
       name: 'history' satisfies Route,
       path: '/history',

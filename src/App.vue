@@ -67,9 +67,9 @@ onMounted(() => {
         <SidebarGroupLabel>Fixes</SidebarGroupLabel>
         <SidebarGroupContent>
           <div class="flex w-full flex-col gap-3">
-            <Switch v-model="settings.grammar" label="Grammar" />
-            <Switch v-model="settings.readability" label="Readability" />
-            <Switch v-model="settings.tone" label="Tone" />
+            <Switch v-model="settings.grammar.enabled" label="Grammar" />
+            <Switch v-model="settings.readability.enabled" label="Readability" />
+            <Switch v-model="settings.tone.enabled" label="Tone" />
           </div>
         </SidebarGroupContent>
       </SidebarGroup>
@@ -78,8 +78,8 @@ onMounted(() => {
         <SidebarGroupLabel>Style</SidebarGroupLabel>
         <SidebarGroupContent>
           <div class="flex w-full flex-col gap-3">
-            <Switch v-model="settings.politeness" label="Polite" />
-            <Switch v-model="settings.formality" label="Formal" />
+            <Switch v-model="settings.politeness.enabled" label="Polite" />
+            <Switch v-model="settings.formality.enabled" label="Formal" />
           </div>
         </SidebarGroupContent>
       </SidebarGroup>
@@ -97,6 +97,9 @@ onMounted(() => {
         <DropdownMenuContent side="top" class="w-[var(--reka-dropdown-menu-trigger-width)]">
           <DropdownMenuItem>
             <RouterLink to="/" class="w-full">Chat</RouterLink>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <RouterLink to="/criteria" class="w-full">Criteria</RouterLink>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <RouterLink to="/history" class="w-full">History</RouterLink>

@@ -6,6 +6,7 @@ mod error;
 mod http;
 mod llm;
 mod manager;
+mod migration;
 
 #[cfg(not(target_os = "linux"))]
 mod tray;
@@ -65,6 +66,7 @@ fn pinia() -> TauriPlugin<Wry> {
   tauri_plugin_pinia::Builder::new()
     .autosave(Duration::from_mins(5))
     .default_save_strategy(SaveStrategy::debounce_secs(1))
+    .migration("settings", migration::v2_1_0())
     .pretty(true)
     .build()
 }

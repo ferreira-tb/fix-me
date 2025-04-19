@@ -44,7 +44,7 @@ async function fix() {
 </script>
 
 <template>
-  <div class="size-full">
+  <div class="h-screen overflow-x-hidden overflow-y-auto">
     <div class="flex h-2/5 flex-col gap-4 p-4">
       <Textarea
         v-model="message"

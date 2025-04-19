@@ -10,6 +10,7 @@ use tokio::sync::OwnedSemaphorePermit;
 use tokio::time::{Duration, sleep};
 
 const URL: &str = "https://api.openai.com/v1/chat/completions";
+
 const USER_AGENT: &str = concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VERSION"));
 
 pub static HTTP: LazyLock<Client> = LazyLock::new(|| {
