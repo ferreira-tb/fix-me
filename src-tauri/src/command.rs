@@ -1,4 +1,4 @@
-use crate::error::{CResult, Error};
+use crate::error::CResult;
 use crate::llm::Llm;
 use tauri::{AppHandle, Manager, WebviewWindow};
 
@@ -15,10 +15,7 @@ pub async fn prompt(app: AppHandle, prompt: String) -> CResult<String> {
 #[tauri::command]
 #[specta::specta]
 pub async fn show_window(window: WebviewWindow) -> CResult<()> {
-  window
-    .show()
-    .map_err(Into::<Error>::into)
-    .map_err(Into::into)
+  window.show().map_err(Into::into)
 }
 
 #[cfg(not(target_os = "linux"))]
@@ -30,7 +27,6 @@ pub async fn create_tray_icon(app: AppHandle) -> CResult<()> {
   let handle = app.clone();
   handle
     .run_on_main_thread(move || create(&app).unwrap())
-    .map_err(Into::<Error>::into)
     .map_err(Into::into)
 }
 

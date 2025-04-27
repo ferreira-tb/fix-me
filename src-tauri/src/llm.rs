@@ -1,6 +1,5 @@
-use crate::error::Result;
-use crate::{bail, http};
-use anyhow::anyhow;
+use crate::http;
+use anyhow::{Result, anyhow, bail};
 use serde::{Deserialize, Serialize};
 use serde_json::Value as Json;
 use specta::Type;
@@ -40,7 +39,7 @@ impl Llm {
     };
 
     let permit = self.acquire_permit().await;
-    let prompt = build_prompt(&settings, prompt);
+    let prompt = build_prompt(&settings, &prompt);
     let response: Json = http::post(permit, token, &prompt).await?;
 
     let answer: Option<String> = try {
@@ -48,7 +47,7 @@ impl Llm {
         .as_object()?
         .get("choices")?
         .as_array()?
-        .get(0)?
+        .first()?
         .as_object()?
         .get("message")?
         .as_object()?
@@ -57,9 +56,7 @@ impl Llm {
         .to_owned()
     };
 
-    answer
-      .ok_or_else(|| anyhow!("invalid response: {response:?}"))
-      .map_err(Into::into)
+    answer.ok_or_else(|| anyhow!("invalid response: {response:?}"))
   }
 
   async fn acquire_permit(&self) -> OwnedSemaphorePermit {
@@ -71,7 +68,7 @@ impl Llm {
   }
 }
 
-fn build_prompt(settings: &Settings, prompt: String) -> Prompt {
+fn build_prompt(settings: &Settings, prompt: &str) -> Prompt {
   let content = String::from(
     "
     Analyze the following text and then modify it to meet the specified criteria.

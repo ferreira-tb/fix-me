@@ -1,5 +1,5 @@
-use crate::error::Result;
 use crate::manager::ManagerExt;
+use anyhow::Result;
 use tauri::menu::{Menu, MenuBuilder, PredefinedMenuItem};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIcon, TrayIconBuilder, TrayIconEvent};
 use tauri::{AppHandle, Manager, Wry, include_image};

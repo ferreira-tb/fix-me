@@ -1,5 +1,4 @@
-use crate::bail;
-use crate::error::Result;
+use anyhow::{Result, bail};
 use reqwest::Client;
 use reqwest::header::{self, HeaderMap};
 use serde::Serialize;

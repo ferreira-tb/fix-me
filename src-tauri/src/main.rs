@@ -4,5 +4,5 @@
 )]
 
 fn main() {
-  fix_me_lib::run()
+  fix_me_lib::run();
 }

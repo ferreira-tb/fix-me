@@ -11,7 +11,8 @@ mod migration;
 #[cfg(not(target_os = "linux"))]
 mod tray;
 
-use error::{BoxResult, Result};
+use anyhow::Result;
+use error::BoxResult;
 use llm::Llm;
 use manager::ManagerExt;
 use std::time::Duration;
@@ -46,7 +47,7 @@ fn open_window(app: &AppHandle) -> Result<()> {
 
   #[cfg_attr(target_os = "linux", allow(unused_variables))]
   let window = WebviewWindowBuilder::new(app, "main", url)
-    .title(&format!("Fix Me {}", env!("CARGO_PKG_VERSION")))
+    .title(format!("Fix Me {}", env!("CARGO_PKG_VERSION")))
     .inner_size(800.0, 600.0)
     .resizable(false)
     .maximizable(false)

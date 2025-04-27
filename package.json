@@ -1,12 +1,12 @@
 {
   "name": "fix-me",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.9.0",
   "private": true,
   "scripts": {
     "build": "cargo tauri build",
-    "clippy": "cargo clippy",
+    "clippy": "cargo +nightly clippy --workspace",
     "dev": "cargo tauri dev",
     "eslint": "eslint . --config eslint.config.js",
     "format": "prettier . --write && cargo fmt --all",
@@ -21,28 +21,28 @@
     "@tauri-apps/plugin-dialog": "^2.2.1",
     "@tauri-apps/plugin-process": "^2.2.1",
     "@tauri-store/pinia": "^3.3.0",
-    "@tb-dev/utils": "^6.0.2",
-    "@tb-dev/vue": "^0.3.37",
+    "@tb-dev/utils": "^6.0.3",
+    "@tb-dev/vue": "^0.3.38",
     "@vueuse/core": "^13.1.0",
     "change-case": "^5.4.4",
-    "lucide-vue-next": "^0.501.0",
+    "lucide-vue-next": "^0.503.0",
     "pinia": "^3.0.2",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.4",
-    "@tb-dev/eslint-config": "^7.0.1",
-    "@types/node": "^22.14.1",
+    "@tb-dev/eslint-config": "^7.1.0",
+    "@types/node": "^22.15.2",
     "@vitejs/plugin-vue": "^5.2.3",
-    "eslint": "^9.25.0",
+    "eslint": "^9.25.1",
     "prettier": "^3.5.3",
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.4",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
-    "vite": "^6.3.2",
-    "vue-tsc": "^2.2.8"
+    "vite": "^6.3.3",
+    "vue-tsc": "^2.2.10"
   }
 }
