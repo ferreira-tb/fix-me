@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "2.1.2"
+version = "2.1.3"
 publish = false
 
 [package.authors]
@@ -11,10 +11,6 @@ workspace = true
 
 [package.rust-version]
 workspace = true
-
-[lib]
-name = "fix_me_lib"
-crate-type = ["cdylib", "rlib", "staticlib"]
 
 [lints]
 workspace = true
@@ -58,7 +54,7 @@ version = "~2.5"
 features = ["devtools", "image-png", "protocol-asset", "rustls-tls", "tray-icon"]
 
 [dependencies.tauri-plugin-pinia]
-version = "3.3"
+version = "3.4"
 features = ["unstable-migration"]
 
 [dependencies.tauri-plugin-prevent-default]
@@ -70,5 +66,5 @@ version = "=2.0.0-rc.21"
 features = ["derive", "typescript"]
 
 [dependencies.tokio]
-version = "1.44"
+version = "1.45"
 features = ["full"]
