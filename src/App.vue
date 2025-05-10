@@ -9,20 +9,19 @@ import { usePromptStore } from '@/stores/prompt';
 import { exit } from '@tauri-apps/plugin-process';
 import { useHistoryStore } from '@/stores/history';
 import { useSettingsStore } from '@/stores/settings';
+import { handleError, onKeyDown } from '@tb-dev/vue';
 import {
   Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  handleError,
-  onKeyDown,
   Sidebar,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
   Switch,
-} from '@tb-dev/vue';
+} from '@tb-dev/vue-components';
 
 const promptStore = usePromptStore();
 const historyStore = useHistoryStore();

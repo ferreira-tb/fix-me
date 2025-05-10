@@ -3,10 +3,10 @@ import { computed, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { onError } from '@/lib/utils';
 import { commands } from '@/lib/api/bindings';
-import { Button, Textarea } from '@tb-dev/vue';
 import { usePromptStore } from '@/stores/prompt';
 import { useHistoryStore } from '@/stores/history';
 import { useSettingsStore } from '@/stores/settings';
+import { Button, Textarea } from '@tb-dev/vue-components';
 import { writeText } from '@tauri-apps/plugin-clipboard-manager';
 
 const promptStore = usePromptStore();

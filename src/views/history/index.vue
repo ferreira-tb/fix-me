@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { onError } from '@/lib/utils';
-import { Button, Card } from '@tb-dev/vue';
 import { useHistoryStore } from '@/stores/history';
+import { Button, Card } from '@tb-dev/vue-components';
 import { writeText } from '@tauri-apps/plugin-clipboard-manager';
 
 const historyStore = useHistoryStore();

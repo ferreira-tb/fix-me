@@ -1,5 +1,5 @@
 import '@/assets/index.css';
-import '@tb-dev/vue/style';
+import '@tb-dev/vue-components/style';
 import '@/lib/prototype';
 import App from '@/App.vue';
 import { createApp } from 'vue';
