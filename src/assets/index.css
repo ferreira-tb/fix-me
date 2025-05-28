@@ -49,3 +49,25 @@ button {
   cursor: pointer;
   user-select: none;
 }
+
+label:where(
+    :has(input[type='number']),
+    :has(input[type='text']),
+    :has(input[type='url']),
+    :has(select),
+    :has(textarea)
+  ) {
+  @apply flex w-full flex-col items-start justify-center gap-2 font-normal;
+
+  & > span {
+    @apply w-full;
+  }
+}
+
+label:where(:has(button[role='switch']), :has(input[type='checkbox']), :has(input[type='radio'])) {
+  @apply flex flex-row items-center justify-start gap-2 font-normal;
+
+  & > span {
+    @apply w-full;
+  }
+}

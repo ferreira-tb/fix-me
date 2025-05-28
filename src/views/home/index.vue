@@ -6,7 +6,7 @@ import { commands } from '@/lib/api/bindings';
 import { usePromptStore } from '@/stores/prompt';
 import { useHistoryStore } from '@/stores/history';
 import { useSettingsStore } from '@/stores/settings';
-import { Button, Textarea } from '@tb-dev/vue-components';
+import { Button, Label, Textarea } from '@tb-dev/vue-components';
 import { writeText } from '@tauri-apps/plugin-clipboard-manager';
 
 const promptStore = usePromptStore();
@@ -46,11 +46,10 @@ async function fix() {
 <template>
   <div class="h-screen overflow-x-hidden overflow-y-auto">
     <div class="flex h-2/5 flex-col gap-4 p-4">
-      <Textarea
-        v-model="message"
-        label="Prompt"
-        label-class="text-secondary-foreground/70 h-[calc(100%-50px)]"
-      />
+      <Label class="h-[calc(100%-50px)]">
+        <span class="text-secondary-foreground/70">Prompt</span>
+        <Textarea v-model="message" />
+      </Label>
       <div class="flex h-[50px] justify-center gap-2">
         <Button :disabled @click="fix">Fix</Button>
       </div>

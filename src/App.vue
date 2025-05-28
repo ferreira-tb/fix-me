@@ -5,9 +5,7 @@ import { capitalCase } from 'change-case';
 import { useColorMode } from '@vueuse/core';
 import { ChevronUp } from 'lucide-vue-next';
 import { commands } from '@/lib/api/bindings';
-import { usePromptStore } from '@/stores/prompt';
 import { exit } from '@tauri-apps/plugin-process';
-import { useHistoryStore } from '@/stores/history';
 import { useSettingsStore } from '@/stores/settings';
 import { handleError, onKeyDown } from '@tb-dev/vue';
 import {
@@ -16,6 +14,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  Label,
   Sidebar,
   SidebarGroup,
   SidebarGroupContent,
@@ -23,8 +22,6 @@ import {
   Switch,
 } from '@tb-dev/vue-components';
 
-const promptStore = usePromptStore();
-const historyStore = useHistoryStore();
 const settings = useSettingsStore();
 
 const route = useRoute();
@@ -38,14 +35,13 @@ useColorMode({
 
 onKeyDown('Escape', () => exit(0).err());
 
-onMounted(() => {
-  // prettier-ignore
-  promptStore.$tauri.start()
-    .then(() => historyStore.$tauri.start())
-    .then(() => settings.$tauri.start())
-    .then(() => commands.createTrayIcon())
-    .then(() => commands.showWindow())
-    .err()
+onMounted(async () => {
+  try {
+    await commands.createTrayIcon();
+    await commands.showWindow();
+  } catch (err) {
+    handleError(err);
+  }
 });
 </script>
 
@@ -66,9 +62,18 @@ onMounted(() => {
         <SidebarGroupLabel>Fixes</SidebarGroupLabel>
         <SidebarGroupContent>
           <div class="flex w-full flex-col gap-3">
-            <Switch v-model="settings.grammar.enabled" label="Grammar" />
-            <Switch v-model="settings.readability.enabled" label="Readability" />
-            <Switch v-model="settings.tone.enabled" label="Tone" />
+            <Label>
+              <Switch v-model="settings.grammar.enabled" />
+              <span>Grammar</span>
+            </Label>
+            <Label>
+              <Switch v-model="settings.readability.enabled" />
+              <span>Readability</span>
+            </Label>
+            <Label>
+              <Switch v-model="settings.tone.enabled" />
+              <span>Tone</span>
+            </Label>
           </div>
         </SidebarGroupContent>
       </SidebarGroup>
@@ -77,8 +82,14 @@ onMounted(() => {
         <SidebarGroupLabel>Style</SidebarGroupLabel>
         <SidebarGroupContent>
           <div class="flex w-full flex-col gap-3">
-            <Switch v-model="settings.politeness.enabled" label="Polite" />
-            <Switch v-model="settings.formality.enabled" label="Formal" />
+            <Label>
+              <Switch v-model="settings.politeness.enabled" />
+              <span>Polite</span>
+            </Label>
+            <Label>
+              <Switch v-model="settings.formality.enabled" />
+              <span>Formal</span>
+            </Label>
           </div>
         </SidebarGroupContent>
       </SidebarGroup>

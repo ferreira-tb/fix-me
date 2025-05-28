@@ -2,7 +2,7 @@
   all(not(debug_assertions), target_os = "windows"),
   windows_subsystem = "windows"
 )]
-#![feature(duration_constructors, try_blocks)]
+#![feature(duration_constructors_lite, try_blocks)]
 
 mod api;
 mod command;
@@ -77,11 +77,11 @@ fn pinia() -> TauriPlugin<Wry> {
 
 #[cfg(windows)]
 fn prevent_default() -> TauriPlugin<Wry> {
-  use tauri_plugin_prevent_default::{Flags, WindowsOptions};
+  use tauri_plugin_prevent_default::{Flags, PlatformOptions};
 
   tauri_plugin_prevent_default::Builder::new()
     .with_flags(Flags::debug())
-    .platform(WindowsOptions {
+    .platform(PlatformOptions {
       general_autofill: false,
       password_autosave: false,
     })

@@ -14,6 +14,7 @@ const pinia = createPinia();
 
 pinia.use(
   TauriPluginPinia({
+    autoStart: true,
     saveOnChange: true,
   })
 );
