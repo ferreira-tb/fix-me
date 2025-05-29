@@ -77,24 +77,19 @@ fn pinia() -> TauriPlugin<Wry> {
 
 #[cfg(windows)]
 fn prevent_default() -> TauriPlugin<Wry> {
-  use tauri_plugin_prevent_default::{Flags, PlatformOptions};
+  #[cfg(windows)]
+  use tauri_plugin_prevent_default::PlatformOptions;
+  use tauri_plugin_prevent_default::{Builder, Flags};
 
-  tauri_plugin_prevent_default::Builder::new()
-    .with_flags(Flags::debug())
-    .platform(PlatformOptions {
-      general_autofill: false,
-      password_autosave: false,
-    })
-    .build()
-}
+  let builder = Builder::new().with_flags(Flags::debug());
 
-#[cfg(not(windows))]
-fn prevent_default() -> TauriPlugin<Wry> {
-  use tauri_plugin_prevent_default::Flags;
+  #[cfg(windows)]
+  let builder = builder.platform(PlatformOptions {
+    general_autofill: false,
+    password_autosave: false,
+  });
 
-  tauri_plugin_prevent_default::Builder::new()
-    .with_flags(Flags::debug())
-    .build()
+  builder.build()
 }
 
 fn single_instance() -> TauriPlugin<Wry> {

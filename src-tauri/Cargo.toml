@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "2.1.5"
+version = "2.1.6"
 publish = false
 
 [package.authors]
@@ -51,7 +51,7 @@ features = ["derive"]
 
 [dependencies.tauri]
 version = "~2.5"
-features = ["devtools", "image-png", "protocol-asset", "rustls-tls", "tray-icon"]
+features = ["image-png", "protocol-asset", "rustls-tls", "tray-icon"]
 
 [dependencies.tauri-plugin-pinia]
 version = "3.6"
