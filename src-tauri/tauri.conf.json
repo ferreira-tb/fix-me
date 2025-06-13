@@ -1,6 +1,6 @@
 {
   "productName": "fix-me",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "identifier": "tsukilabs.fix-me",
   "build": {
     "beforeDevCommand": "pnpm run vite:dev",

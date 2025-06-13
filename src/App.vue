@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { capitalCase } from 'change-case';
 import { useColorMode } from '@vueuse/core';
@@ -22,9 +22,9 @@ import {
   Switch,
 } from '@tb-dev/vue-components';
 
-const settings = useSettingsStore();
-
 const route = useRoute();
+const isSidebarOpen = ref(true);
+const settings = useSettingsStore();
 
 useColorMode({
   initialValue: 'dark',
@@ -46,7 +46,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Sidebar default-open width="200px">
+  <Sidebar v-model:open="isSidebarOpen" width="200px">
     <main class="h-screen w-[calc(100vw-var(--sidebar-width))] select-none">
       <div class="size-full overflow-hidden p-0">
         <RouterView #default="{ Component }">

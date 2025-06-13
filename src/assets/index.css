@@ -25,11 +25,6 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -57,17 +52,28 @@ label:where(
     :has(select),
     :has(textarea)
   ) {
-  @apply flex w-full flex-col items-start justify-center gap-2 font-normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  font-weight: 400;
 
   & > span {
-    @apply w-full;
+    width: 100%;
   }
 }
 
 label:where(:has(button[role='switch']), :has(input[type='checkbox']), :has(input[type='radio'])) {
-  @apply flex flex-row items-center justify-start gap-2 font-normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
 
   & > span {
-    @apply w-full;
+    width: 100%;
   }
 }
