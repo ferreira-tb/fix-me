@@ -13,5 +13,8 @@ export default defineConfig({
     typescript: {
       '@typescript-eslint/consistent-type-definitions': 'off',
     },
+    vue: {
+      'vue/no-static-inline-styles': 'off',
+    },
   },
 });

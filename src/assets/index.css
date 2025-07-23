@@ -45,13 +45,17 @@ button {
   user-select: none;
 }
 
+textarea {
+  resize: vertical;
+}
+
 label:where(
-    :has(input[type='number']),
-    :has(input[type='text']),
-    :has(input[type='url']),
-    :has(select),
-    :has(textarea)
-  ) {
+  :has(input[type='number']),
+  :has(input[type='text']),
+  :has(input[type='url']),
+  :has(select),
+  :has(textarea)
+) {
   display: flex;
   flex-direction: column;
   justify-content: center;
