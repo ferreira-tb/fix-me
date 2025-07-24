@@ -1,6 +1,6 @@
 {
   "name": "fix-me",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "type": "module",
   "packageManager": "pnpm@10.13.1",
   "private": true,
@@ -22,9 +22,9 @@
     "@tauri-apps/plugin-dialog": "^2.3.1",
     "@tauri-apps/plugin-process": "^2.3.0",
     "@tauri-store/pinia": "^3.7.1",
-    "@tb-dev/utils": "^7.0.7",
-    "@tb-dev/vue": "^2.0.13",
-    "@tb-dev/vue-components": "^5.0.1",
+    "@tb-dev/utils": "^7.0.8",
+    "@tb-dev/vue": "^2.0.14",
+    "@tb-dev/vue-components": "^5.0.2",
     "@vueuse/core": "^13.5.0",
     "change-case": "^5.4.4",
     "lucide-vue-next": "^0.525.0",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.11",
-    "@tb-dev/eslint-config": "^8.0.2",
+    "@tb-dev/eslint-config": "^8.0.3",
     "@types/node": "^24.1.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "eslint": "^9.31.0",
@@ -44,7 +44,7 @@
     "tailwindcss": "^4.1.11",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
-    "vite": "^7.0.5",
+    "vite": "^7.0.6",
     "vue-tsc": "^3.0.3"
   }
 }

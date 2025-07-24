@@ -48,7 +48,7 @@ async function fix() {
     <div class="flex h-2/5 flex-col gap-4 p-4">
       <Label class="h-[calc(100%-50px)]">
         <span class="text-secondary-foreground/70">Prompt</span>
-        <Textarea v-model="message" />
+        <Textarea v-model="message" class="resize-none!" />
       </Label>
       <div class="flex h-[50px] justify-center gap-2">
         <Button :disabled @click="fix">Fix</Button>
