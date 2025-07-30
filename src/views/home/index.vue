@@ -45,10 +45,10 @@ async function fix() {
 
 <template>
   <div class="h-screen overflow-x-hidden overflow-y-auto">
-    <div class="flex h-2/5 flex-col gap-4 p-4">
-      <Label class="h-[calc(100%-50px)]">
+    <div class="flex h-3/5 flex-col gap-4 p-4">
+      <Label class="h-[calc(100%-30px)]">
         <span class="text-secondary-foreground/70">Prompt</span>
-        <Textarea v-model="message" class="resize-none!" />
+        <Textarea v-model="message" class="h-full resize-none!" />
       </Label>
       <div class="flex h-[50px] justify-center gap-2">
         <Button :disabled @click="fix">Fix</Button>
@@ -57,7 +57,7 @@ async function fix() {
 
     <div
       v-if="answer"
-      class="flex h-3/5 flex-col overflow-x-hidden overflow-y-auto px-2 pb-4 select-text"
+      class="flex h-2/5 flex-col overflow-x-hidden overflow-y-auto px-2 pb-4 select-text"
     >
       <p>{{ answer.text }}</p>
     </div>

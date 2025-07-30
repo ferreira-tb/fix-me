@@ -19,10 +19,10 @@ export const commands = {
 
 /** user-defined constants **/
 
-export const DEFAULT_FORMALITY = 'Ensure the text is formal.' as const;
 export const DEFAULT_TONE = 'Check the tone used.' as const;
-export const DEFAULT_GRAMMAR = 'Fix any grammatical errors.' as const;
+export const DEFAULT_FORMALITY = 'Ensure the text is formal.' as const;
 export const DEFAULT_POLITENESS = 'Make sure the text is polite.' as const;
+export const DEFAULT_GRAMMAR = 'Fix any grammatical errors.' as const;
 export const DEFAULT_READABILITY = 'Improve readability.' as const;
 
 /** user-defined types **/

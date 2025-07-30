@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "2.1.9"
+version = "2.1.10"
 publish = false
 
 [package.authors]
@@ -58,13 +58,13 @@ version = "3.7"
 features = ["unstable-migration"]
 
 [dependencies.tauri-plugin-prevent-default]
-version = "2.1"
-features = ["unstable-windows"]
+version = "3"
+features = ["platform-windows"]
 
 [dependencies.tauri-specta]
 version = "=2.0.0-rc.21"
 features = ["derive", "typescript"]
 
 [dependencies.tokio]
-version = "1.46"
+version = "1.47"
 features = ["full"]
