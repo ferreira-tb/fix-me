@@ -34,10 +34,12 @@ async function fix() {
     answers.value = _answers;
 
     await writeText(answerText);
-  } catch (err) {
+  }
+  catch (err) {
     answer.value = null;
     onError(err);
-  } finally {
+  }
+  finally {
     loading.value = false;
   }
 }
@@ -45,7 +47,7 @@ async function fix() {
 
 <template>
   <div class="h-screen overflow-x-hidden overflow-y-auto">
-    <div class="flex h-3/5 flex-col gap-4 p-4">
+    <div class="flex h-2/5 flex-col gap-4 p-4">
       <Label class="h-[calc(100%-30px)]">
         <span class="text-secondary-foreground/70">Prompt</span>
         <Textarea v-model="message" class="h-full resize-none!" />
@@ -57,9 +59,9 @@ async function fix() {
 
     <div
       v-if="answer"
-      class="flex h-2/5 flex-col overflow-x-hidden overflow-y-auto px-2 pb-4 select-text"
+      class="flex h-3/5 flex-col overflow-x-hidden overflow-y-auto px-2 pb-4 select-text"
     >
-      <p>{{ answer.text }}</p>
+      <pre class="mt-4 whitespace-pre-wrap break-keep">{{ answer.text }}</pre>
     </div>
   </div>
 </template>

@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source "../../node_modules/@tb-dev/vue-components";
 
@@ -49,35 +49,26 @@ textarea {
   resize: vertical;
 }
 
-label:where(
-  :has(input[type='number']),
-  :has(input[type='text']),
-  :has(input[type='url']),
-  :has(select),
-  :has(textarea)
-) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.5rem;
-  width: 100%;
-  font-weight: 400;
+label:has(select),
+label:has(textarea),
+label:has(button[role="combobox"]),
+label:has(input[type="number"]),
+label:has(input[type="text"]),
+label:has(input[type="url"]) {
+  @apply flex w-full flex-col justify-center items-start gap-2 py-1 font-normal;
 
   & > span {
-    width: 100%;
+    @apply w-full;
   }
 }
 
-label:where(:has(button[role='switch']), :has(input[type='checkbox']), :has(input[type='radio'])) {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 400;
+label:has(button[role="checkbox"]),
+label:has(button[role="switch"]),
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+  @apply flex flex-row justify-start items-center gap-2 py-1 font-normal;
 
   & > span {
-    width: 100%;
+    @apply w-full;
   }
 }

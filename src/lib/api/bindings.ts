@@ -20,14 +20,14 @@ export const commands = {
 /** user-defined constants **/
 
 export const DEFAULT_TONE = 'Check the tone used.' as const;
-export const DEFAULT_FORMALITY = 'Ensure the text is formal.' as const;
-export const DEFAULT_POLITENESS = 'Make sure the text is polite.' as const;
 export const DEFAULT_GRAMMAR = 'Fix any grammatical errors.' as const;
 export const DEFAULT_READABILITY = 'Improve readability.' as const;
+export const DEFAULT_POLITENESS = 'Make sure the text is polite.' as const;
+export const DEFAULT_FORMALITY = 'Ensure the text is formal.' as const;
 
 /** user-defined types **/
 
-export type Criteria = { message: string; enabled: boolean };
+export type Criteria = { message: string; enabled: boolean; };
 export type Error = string;
 export type Settings = {
   formality: Criteria;
@@ -45,16 +45,23 @@ import * as TAURI_API_EVENT from '@tauri-apps/api/event';
 import { type WebviewWindow as __WebviewWindow__ } from '@tauri-apps/api/webviewWindow';
 
 type __EventObj__<T> = {
-  listen: (cb: TAURI_API_EVENT.EventCallback<T>) => ReturnType<typeof TAURI_API_EVENT.listen<T>>;
-  once: (cb: TAURI_API_EVENT.EventCallback<T>) => ReturnType<typeof TAURI_API_EVENT.once<T>>;
-  emit: null extends T
-    ? (payload?: T) => ReturnType<typeof TAURI_API_EVENT.emit>
-    : (payload: T) => ReturnType<typeof TAURI_API_EVENT.emit>;
+  listen: (
+    cb: TAURI_API_EVENT.EventCallback<T>,
+  ) => ReturnType<typeof TAURI_API_EVENT.listen<T>>;
+  once: (
+    cb: TAURI_API_EVENT.EventCallback<T>,
+  ) => ReturnType<typeof TAURI_API_EVENT.once<T>>;
+  emit: null extends T ? (payload?: T) => ReturnType<typeof TAURI_API_EVENT.emit> :
+    (payload: T) => ReturnType<typeof TAURI_API_EVENT.emit>;
 };
 
-export type Result<T, E> = { status: 'ok'; data: T } | { status: 'error'; error: E };
+export type Result<T, E> =
+  | { status: 'ok'; data: T; }
+  | { status: 'error'; error: E; };
 
-function __makeEvents__<T extends Record<string, any>>(mappings: Record<keyof T, string>) {
+function __makeEvents__<T extends Record<string, any>>(
+  mappings: Record<keyof T, string>,
+) {
   return new Proxy(
     {} as unknown as {
       [K in keyof T]: __EventObj__<T[K]> & {
@@ -83,6 +90,6 @@ function __makeEvents__<T extends Record<string, any>>(mappings: Record<keyof T,
           },
         });
       },
-    }
+    },
   );
 }

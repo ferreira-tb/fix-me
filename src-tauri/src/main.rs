@@ -2,7 +2,7 @@
   all(not(debug_assertions), target_os = "windows"),
   windows_subsystem = "windows"
 )]
-#![feature(duration_constructors_lite, try_blocks)]
+#![feature(try_blocks)]
 
 mod api;
 mod command;
@@ -111,7 +111,9 @@ fn on_window_event(app: &AppHandle) -> impl Fn(&tauri::WindowEvent) + use<> {
   use tauri::WindowEvent::CloseRequested;
   let app = app.clone();
   move |event| {
-    if let CloseRequested { api, .. } = event {
+    if !cfg!(debug_assertions)
+      && let CloseRequested { api, .. } = event
+    {
       api.prevent_close();
       app.main_window().hide().unwrap();
     }

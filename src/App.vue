@@ -43,7 +43,8 @@ onMounted(async () => {
   try {
     await commands.createTrayIcon();
     await commands.showWindow();
-  } catch (err) {
+  }
+  catch (err) {
     handleError(err);
   }
 });

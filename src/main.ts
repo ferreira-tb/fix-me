@@ -16,7 +16,7 @@ pinia.use(
   TauriPluginPinia({
     autoStart: true,
     saveOnChange: true,
-  })
+  }),
 );
 
 setCurrentApp(app);
