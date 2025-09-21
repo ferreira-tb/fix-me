@@ -1,0 +1,49 @@
+@reference "./base.css";
+
+* {
+  @apply border-border outline-ring/50;
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+button {
+  @apply cursor-pointer select-none;
+}
+
+button[data-slot="tabs-trigger"] {
+  @apply border-0!;
+}
+
+textarea {
+  @apply resize-y;
+}
+
+label:has(select),
+label:has(textarea),
+label:has(button[role="combobox"]),
+label:has(input[type="number"]),
+label:has(input[type="text"]),
+label:has(input[type="url"]) {
+  @apply flex w-full flex-col justify-center items-start gap-2 py-1 font-normal;
+
+  & > span {
+    @apply w-full;
+  }
+}
+
+label:has(button[role="checkbox"]),
+label:has(button[role="switch"]),
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+  @apply flex flex-row justify-start items-center gap-2 py-1 font-normal;
+
+  & > span {
+    @apply w-full;
+  }
+}
+
+[data-scrollbarimpl] {
+  @apply border-0!;
+}

@@ -18,7 +18,6 @@ pub async fn show_window(window: WebviewWindow) -> CResult<()> {
   window.show().map_err(Into::into)
 }
 
-#[cfg(not(target_os = "linux"))]
 #[tauri::command]
 #[specta::specta]
 pub async fn create_tray_icon(app: AppHandle) -> CResult<()> {
@@ -28,11 +27,4 @@ pub async fn create_tray_icon(app: AppHandle) -> CResult<()> {
   handle
     .run_on_main_thread(move || create(&app).unwrap())
     .map_err(Into::into)
-}
-
-#[cfg(target_os = "linux")]
-#[tauri::command]
-#[specta::specta]
-pub async fn create_tray_icon() -> CResult<()> {
-  Ok(())
 }

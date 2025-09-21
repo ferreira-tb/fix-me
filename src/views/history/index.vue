@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { onError } from '@/lib/utils';
+import { handleError } from '@/lib/error';
 import { useHistoryStore } from '@/stores/history';
 import { writeText } from '@tauri-apps/plugin-clipboard-manager';
 import { Button, Card, CardContent, CardFooter } from '@tb-dev/vue-components';
@@ -13,7 +13,7 @@ function date(time: number) {
 }
 
 function copy(text: string) {
-  writeText(text).catch(onError);
+  writeText(text).catch(handleError);
 }
 
 function remove(time: number) {

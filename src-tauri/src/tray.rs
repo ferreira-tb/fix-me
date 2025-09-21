@@ -1,4 +1,4 @@
-use crate::manager::ManagerExt;
+use crate::window::WindowExt;
 use anyhow::Result;
 use tauri::menu::{Menu, MenuBuilder, PredefinedMenuItem};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIcon, TrayIconBuilder, TrayIconEvent};
@@ -9,7 +9,7 @@ const ID: &str = "fix-me-tray-icon";
 struct TrayMenu(Menu<Wry>);
 
 impl TrayMenu {
-  pub fn new<M: ManagerExt>(app: &M) -> Result<Self> {
+  pub fn new<M: Manager<Wry>>(app: &M) -> Result<Self> {
     MenuBuilder::new(app)
       .items(&[&PredefinedMenuItem::quit(app, None)?])
       .build()

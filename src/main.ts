@@ -1,11 +1,12 @@
-import '@/assets/index.css';
-import '@tb-dev/vue-components/style';
+import '@/assets/style/base.css';
+import '@/assets/style/main.css';
 import '@/lib/prototype';
 import App from '@/App.vue';
 import { createApp } from 'vue';
 import { router } from '@/router';
 import { createPinia } from 'pinia';
-import { onError } from '@/lib/utils';
+import { handleError } from '@/lib/error';
+import { checkForUpdates } from '@/lib/updater';
 import { TauriPluginPinia } from '@tauri-store/pinia';
 import { setCurrentApp, setErrorHandler } from '@tb-dev/vue';
 
@@ -20,12 +21,23 @@ pinia.use(
 );
 
 setCurrentApp(app);
-setErrorHandler(onError, app);
+setErrorHandler(handleError, app);
 
 app.use(router);
 app.use(pinia);
 
-// prettier-ignore
-void router
-  .push({ name: 'home' satisfies Route })
-  .then(() => app.mount('#app'));
+async function init() {
+  try {
+    await checkForUpdates();
+  }
+  catch (err) {
+    handleError(err);
+  }
+  finally {
+    await router.push({ name: 'home' satisfies Route });
+  }
+
+  app.mount('#app');
+}
+
+void init();

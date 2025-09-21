@@ -1,6 +1,6 @@
 {
   "productName": "fix-me",
-  "version": "2.1.11",
+  "version": "3.0.0",
   "identifier": "tsukilabs.fix-me",
   "build": {
     "beforeDevCommand": "pnpm run vite:dev",
@@ -25,8 +25,13 @@
   "bundle": {
     "publisher": "Tsukilabs",
     "shortDescription": "Fix grammar mistakes",
+    "license": "GPL-3.0-only",
+    "licenseFile": "../LICENSE",
     "active": true,
-    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "targets": [
+      "nsis"
+    ],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
@@ -34,5 +39,16 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ]
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEI5ODEyOUNEQ0E2QkE4OUEKUldTYXFHdkt6U21CdVhkQVZmTkJ4RWpEN0t2QXJ5NE5Xa1lZaHhvdW5mcGJwSFdDdTFYU2RFTXkK",
+      "endpoints": [
+        "https://github.com/ferreira-tb/fix-me/releases/latest/download/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
   }
 }

@@ -3,10 +3,16 @@
   "description": "Capability for the main window",
   "windows": ["main"],
   "permissions": [
-    "pinia:default",
     "core:event:default",
     "process:allow-exit",
     "clipboard-manager:allow-write-text",
-    "dialog:default"
+    "dialog:default",
+    "pinia:default",
+    "process:allow-exit",
+    "process:allow-restart",
+    "updater:allow-check",
+    "updater:allow-download",
+    "updater:allow-download-and-install",
+    "updater:allow-install"
   ]
 }

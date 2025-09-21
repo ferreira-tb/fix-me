@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { storeToRefs } from 'pinia';
-import { onError } from '@/lib/utils';
+import { handleError } from '@/lib/error';
 import { commands } from '@/lib/api/bindings';
 import { usePromptStore } from '@/stores/prompt';
 import { useHistoryStore } from '@/stores/history';
@@ -37,7 +37,7 @@ async function fix() {
   }
   catch (err) {
     answer.value = null;
-    onError(err);
+    handleError(err);
   }
   finally {
     loading.value = false;
@@ -49,7 +49,6 @@ async function fix() {
   <div class="h-screen overflow-x-hidden overflow-y-auto">
     <div class="flex h-2/5 flex-col gap-4 p-4">
       <Label class="h-[calc(100%-30px)]">
-        <span class="text-secondary-foreground/70">Prompt</span>
         <Textarea v-model="message" class="h-full resize-none!" />
       </Label>
       <div class="flex h-[50px] justify-center gap-2">
