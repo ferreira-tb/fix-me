@@ -2,6 +2,7 @@ use crate::window::WindowExt;
 use std::time::Duration;
 use tauri::Wry;
 use tauri::plugin::TauriPlugin;
+use tauri_plugin_pinia::PrettyTomlMarshaler;
 
 pub fn pinia() -> TauriPlugin<Wry> {
   use tauri_plugin_pinia::SaveStrategy;
@@ -9,7 +10,7 @@ pub fn pinia() -> TauriPlugin<Wry> {
   tauri_plugin_pinia::Builder::new()
     .autosave(Duration::from_mins(5))
     .default_save_strategy(SaveStrategy::debounce_secs(1))
-    .pretty(true)
+    .marshaler(Box::new(PrettyTomlMarshaler))
     .build()
 }
 

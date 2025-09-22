@@ -14,7 +14,7 @@ pub fn open(app: &AppHandle) -> Result<()> {
   let url = WebviewUrl::App("index.html".into());
 
   let window = WebviewWindowBuilder::new(app, "main", url)
-    .title(format!("Fix Me {}", env!("CARGO_PKG_VERSION")))
+    .title("Fix Me")
     .initialization_script(script())
     .inner_size(800.0, 600.0)
     .resizable(false)

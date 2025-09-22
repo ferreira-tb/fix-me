@@ -32,7 +32,7 @@ impl Llm {
     let settings = self
       .app
       .pinia()
-      .try_state::<Settings>("settings")?;
+      .state::<Settings>("settings")?;
 
     let Some(token) = settings.token.as_deref() else {
       bail!("unauthorized: missing token");

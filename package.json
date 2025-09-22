@@ -1,8 +1,8 @@
 {
   "name": "fix-me",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.17.1",
   "private": true,
   "scripts": {
     "build": "cargo tauri build",
@@ -22,10 +22,10 @@
     "@tauri-apps/plugin-dialog": "^2.4.0",
     "@tauri-apps/plugin-process": "^2.3.0",
     "@tauri-apps/plugin-updater": "^2.9.0",
-    "@tauri-store/pinia": "^3.7.1",
-    "@tb-dev/utils": "^7.0.14",
-    "@tb-dev/vue": "^3.3.0",
-    "@tb-dev/vue-components": "^6.0.0",
+    "@tauri-store/pinia": "^4.0.0",
+    "@tb-dev/utils": "^7.0.15",
+    "@tb-dev/vue": "^3.3.1",
+    "@tb-dev/vue-components": "^6.0.1",
     "@vueuse/core": "^13.9.0",
     "change-case": "^5.4.4",
     "lucide-vue-next": "^0.544.0",
@@ -37,14 +37,14 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "@tauri-apps/cli": "^2.8.4",
-    "@tb-dev/eslint-config": "^8.0.11",
+    "@tb-dev/eslint-config": "^8.0.12",
     "@types/node": "^24.5.2",
     "@vitejs/plugin-vue": "^6.0.1",
     "eslint": "^9.36.0",
     "tailwindcss": "^4.1.13",
     "tslib": "^2.8.1",
     "typescript": "^5.9.2",
-    "vite": "^7.1.6",
-    "vue-tsc": "^3.0.7"
+    "vite": "^7.1.7",
+    "vue-tsc": "^3.0.8"
   }
 }
