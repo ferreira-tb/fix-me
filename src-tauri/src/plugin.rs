@@ -19,10 +19,15 @@ pub fn prevent_default() -> TauriPlugin<Wry> {
 
   Builder::new()
     .with_flags(Flags::debug())
-    .platform(PlatformOptions {
-      general_autofill: false,
-      password_autosave: false,
-    })
+    .platform(
+      PlatformOptions::new()
+        .browser_accelerator_keys(false)
+        .default_context_menus(false)
+        .default_script_dialogs(false)
+        .general_autofill(false)
+        .password_autosave(false)
+        .zoom_control(false),
+    )
     .build()
 }
 

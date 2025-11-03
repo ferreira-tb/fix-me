@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "3.0.2"
+version = "3.0.3"
 publish = false
 
 [package.authors]
@@ -47,7 +47,7 @@ version = "0.27"
 features = ["derive"]
 
 [dependencies.tauri]
-version = "2.8"
+version = "2.9"
 features = ["image-png", "protocol-asset", "rustls-tls", "tray-icon"]
 
 [dependencies.tauri-plugin-pinia]
@@ -55,7 +55,7 @@ version = "4.1"
 features = ["marshaler-toml"]
 
 [dependencies.tauri-plugin-prevent-default]
-version = "3"
+version = "4"
 features = ["platform-windows"]
 
 [dependencies.tauri-specta]
@@ -63,9 +63,9 @@ version = "=2.0.0-rc.21"
 features = ["derive", "typescript"]
 
 [dependencies.tokio]
-version = "1.47"
+version = "1.48"
 features = ["full"]
 
 [build-dependencies.tauri-build]
-version = "2.4"
+version = "2.5"
 features = []

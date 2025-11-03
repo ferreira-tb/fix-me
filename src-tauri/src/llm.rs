@@ -145,7 +145,7 @@ pub struct Criteria {
 
 #[derive(Default, Serialize)]
 struct Prompt {
-  model: Model,
+  model: String,
   messages: Vec<Message>,
 }
 
@@ -155,18 +155,10 @@ impl Prompt {
     I: IntoIterator<Item = Message>,
   {
     Self {
-      model: Model::default(),
+      model: "gpt-5-mini".to_owned(),
       messages: messages.into_iter().collect(),
     }
   }
-}
-
-#[derive(Default, Display, Serialize)]
-enum Model {
-  #[default]
-  #[serde(rename = "gpt-4o-mini")]
-  #[strum(serialize = "gpt-4o-mini")]
-  Gpt4Mini,
 }
 
 #[derive(Serialize)]
