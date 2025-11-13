@@ -1,6 +1,6 @@
 [package]
 name = "fix-me"
-version = "3.0.3"
+version = "3.0.4"
 publish = false
 
 [package.authors]
@@ -51,7 +51,7 @@ version = "2.9"
 features = ["image-png", "protocol-asset", "rustls-tls", "tray-icon"]
 
 [dependencies.tauri-plugin-pinia]
-version = "4.1"
+version = "4"
 features = ["marshaler-toml"]
 
 [dependencies.tauri-plugin-prevent-default]
