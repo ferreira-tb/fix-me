@@ -10,7 +10,6 @@ mod error;
 mod http;
 mod llm;
 mod plugin;
-mod tray;
 mod window;
 
 use error::BoxResult;
@@ -23,7 +22,6 @@ fn main() {
     .plugin(plugin::single_instance())
     .plugin(plugin::pinia())
     .plugin(plugin::prevent_default())
-    .plugin(plugin::window_state())
     .plugin(tauri_plugin_clipboard_manager::init())
     .plugin(tauri_plugin_dialog::init())
     .plugin(tauri_plugin_process::init())

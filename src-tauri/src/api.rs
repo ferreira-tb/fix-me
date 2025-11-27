@@ -19,11 +19,7 @@ pub fn collect() -> SpectaBuilder {
     .constant("DEFAULT_READABILITY", DEFAULT_READABILITY)
     .constant("DEFAULT_TONE", DEFAULT_TONE)
     .typ::<Settings>()
-    .commands(collect_commands![
-      command::create_tray_icon,
-      command::prompt,
-      command::show_window
-    ]);
+    .commands(collect_commands![command::prompt, command::show_window]);
 
   #[cfg(debug_assertions)]
   export(&builder);

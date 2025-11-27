@@ -13,7 +13,7 @@ impl<T: Manager<Wry>> WindowExt for T {}
 pub fn open(app: &AppHandle) -> Result<()> {
   let url = WebviewUrl::App("index.html".into());
 
-  let window = WebviewWindowBuilder::new(app, "main", url)
+  WebviewWindowBuilder::new(app, "main", url)
     .title("Fix Me")
     .initialization_script(script())
     .inner_size(800.0, 600.0)
@@ -21,24 +21,10 @@ pub fn open(app: &AppHandle) -> Result<()> {
     .maximizable(false)
     .minimizable(true)
     .visible(false)
+    .center()
     .build()?;
 
-  window.on_window_event(on_window_event(app));
-
   Ok(())
-}
-
-fn on_window_event(app: &AppHandle) -> impl Fn(&tauri::WindowEvent) + use<> {
-  use tauri::WindowEvent::CloseRequested;
-  let app = app.clone();
-  move |event| {
-    if !cfg!(debug_assertions)
-      && let CloseRequested { api, .. } = event
-    {
-      api.prevent_close();
-      app.main_window().hide().unwrap();
-    }
-  }
 }
 
 fn script() -> String {

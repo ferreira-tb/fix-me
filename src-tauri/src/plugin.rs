@@ -36,11 +36,3 @@ pub fn single_instance() -> TauriPlugin<Wry> {
     app.main_window().show().unwrap();
   })
 }
-
-pub fn window_state() -> TauriPlugin<Wry> {
-  use tauri_plugin_window_state::StateFlags as Flags;
-
-  tauri_plugin_window_state::Builder::new()
-    .with_state_flags(Flags::POSITION)
-    .build()
-}

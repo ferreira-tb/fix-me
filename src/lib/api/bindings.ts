@@ -4,9 +4,6 @@
 /** user-defined commands **/
 
 export const commands = {
-  async createTrayIcon(): Promise<null> {
-    return await TAURI_INVOKE('create_tray_icon');
-  },
   async prompt(prompt: string): Promise<string> {
     return await TAURI_INVOKE('prompt', { prompt });
   },
@@ -19,10 +16,10 @@ export const commands = {
 
 /** user-defined constants **/
 
-export const DEFAULT_POLITENESS = 'Make sure the text is polite.' as const;
-export const DEFAULT_GRAMMAR = 'Fix any grammatical errors.' as const;
-export const DEFAULT_READABILITY = 'Improve readability.' as const;
 export const DEFAULT_FORMALITY = 'Ensure the text is formal.' as const;
+export const DEFAULT_GRAMMAR = 'Fix any grammatical errors.' as const;
+export const DEFAULT_POLITENESS = 'Make sure the text is polite.' as const;
+export const DEFAULT_READABILITY = 'Improve readability.' as const;
 export const DEFAULT_TONE = 'Check the tone used.' as const;
 
 /** user-defined types **/

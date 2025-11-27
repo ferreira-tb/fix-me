@@ -41,7 +41,6 @@ onKeyDown('Escape', () => exit(0).err());
 
 onMounted(async () => {
   try {
-    await commands.createTrayIcon();
     await commands.showWindow();
   }
   catch (err) {
@@ -104,7 +103,7 @@ onMounted(async () => {
             </Button>
           </DropdownMenuTrigger>
 
-          <DropdownMenuContent side="top" class="w-[var(--reka-dropdown-menu-trigger-width)]">
+          <DropdownMenuContent side="top" class="w-(--reka-dropdown-menu-trigger-width)">
             <DropdownMenuItem>
               <RouterLink to="/" class="w-full">Chat</RouterLink>
             </DropdownMenuItem>

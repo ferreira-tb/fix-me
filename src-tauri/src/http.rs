@@ -21,7 +21,7 @@ pub static HTTP: LazyLock<Client> = LazyLock::new(|| {
     .https_only(true)
     .default_headers(headers)
     .user_agent(USER_AGENT)
-    .timeout(Duration::from_mins(2))
+    .timeout(Duration::from_mins(1))
     .build()
     .expect("failed to create http client")
 });
