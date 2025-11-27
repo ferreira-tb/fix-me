@@ -33,6 +33,4 @@ catch (err) {
   handleError(err);
 }
 
-await router.push({ name: 'home' satisfies Route });
-
 app.mount('#app');
