@@ -39,14 +39,7 @@ useColorMode({
 
 onKeyDown('Escape', () => exit(0).err());
 
-onMounted(async () => {
-  try {
-    await commands.showWindow();
-  }
-  catch (err) {
-    handleError(err);
-  }
-});
+onMounted(() => commands.showWindow().err());
 </script>
 
 <template>

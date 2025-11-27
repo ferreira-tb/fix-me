@@ -15,5 +15,8 @@ pub async fn prompt(app: AppHandle, prompt: String) -> CResult<String> {
 #[tauri::command]
 #[specta::specta]
 pub async fn show_window(window: WebviewWindow) -> CResult<()> {
-  window.show().map_err(Into::into)
+  window.show()?;
+  window.unminimize()?;
+  window.set_focus()?;
+  Ok(())
 }

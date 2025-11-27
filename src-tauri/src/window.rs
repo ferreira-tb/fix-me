@@ -12,7 +12,6 @@ impl<T: Manager<Wry>> WindowExt for T {}
 
 pub fn open(app: &AppHandle) -> Result<()> {
   let url = WebviewUrl::App("index.html".into());
-
   WebviewWindowBuilder::new(app, "main", url)
     .title("Fix Me")
     .initialization_script(script())
@@ -21,7 +20,6 @@ pub fn open(app: &AppHandle) -> Result<()> {
     .maximizable(false)
     .minimizable(true)
     .visible(false)
-    .center()
     .build()?;
 
   Ok(())
