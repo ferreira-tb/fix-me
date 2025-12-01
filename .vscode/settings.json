@@ -1,19 +1,4 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
   "[powershell]": {
     "editor.defaultFormatter": "ms-vscode.powershell"
   },
@@ -22,15 +7,6 @@
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "dprint.dprint"
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
@@ -44,5 +20,16 @@
   },
   "files.exclude": {
     ".eslintcache": true
+  },
+  "workbench.editor.customLabels.patterns": {
+    "**/App.vue": "${dirname}/App.vue",
+    "**/build.rs": "${dirname}/build.rs",
+    "**/Cargo.toml": "${dirname}/Cargo.toml",
+    "**/index.ts": "${dirname}/index.ts",
+    "**/index.vue": "${dirname}/index.vue",
+    "**/mod.rs": "${dirname}/mod.rs",
+    "*/*/**/lib.rs": "${dirname(1)}/lib.rs",
+    "*/*/**/main.rs": "${dirname(1)}/main.rs",
+    "*/Cargo.toml": "<workspace>/Cargo.toml"
   }
 }

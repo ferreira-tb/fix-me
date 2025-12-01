@@ -20,6 +20,7 @@ pub fn open(app: &AppHandle) -> Result<()> {
     .maximizable(false)
     .minimizable(true)
     .visible(false)
+    .center()
     .build()?;
 
   Ok(())
