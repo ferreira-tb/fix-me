@@ -21,11 +21,13 @@ pub fn prevent_default() -> TauriPlugin<Wry> {
     .with_flags(Flags::debug())
     .platform(
       PlatformOptions::new()
-        .browser_accelerator_keys(false)
-        .default_context_menus(false)
-        .default_script_dialogs(false)
+        .browser_accelerator_keys(cfg!(debug_assertions))
+        .default_context_menus(cfg!(debug_assertions))
+        .default_script_dialogs(cfg!(debug_assertions))
         .general_autofill(false)
         .password_autosave(false)
+        .pinch_zoom(false)
+        .swipe_navigation(false)
         .zoom_control(false),
     )
     .build()
