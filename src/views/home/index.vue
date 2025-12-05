@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { handleError } from '@/lib/error';
+import { onCtrlKeyDown } from '@tb-dev/vue';
 import { commands } from '@/lib/api/bindings';
 import { usePromptStore } from '@/stores/prompt';
 import { useHistoryStore } from '@/stores/history';
 import { useSettingsStore } from '@/stores/settings';
 import { Button, Label, Textarea } from '@tb-dev/vue-components';
 import { writeText } from '@tauri-apps/plugin-clipboard-manager';
+import { computed, nextTick, onMounted, ref, useTemplateRef } from 'vue';
 
 const promptStore = usePromptStore();
 const { message, answer } = storeToRefs(promptStore);
@@ -17,9 +18,22 @@ const { answers } = storeToRefs(historyStore);
 
 const settings = useSettingsStore();
 
+const messageEl = useTemplateRef('message-textarea');
+
 const loading = ref(false);
 const disabled = computed(() => {
   return loading.value || !message.value || !settings.token;
+});
+
+onCtrlKeyDown(['a', 'A'], (e) => {
+  e.preventDefault();
+  messageEl.value?.$el.focus();
+  messageEl.value?.$el.select();
+});
+
+onMounted(async () => {
+  await nextTick();
+  messageEl.value?.$el.focus();
 });
 
 async function fix() {
@@ -49,7 +63,16 @@ async function fix() {
   <div class="h-screen overflow-x-hidden overflow-y-auto">
     <div class="flex h-2/5 flex-col gap-4 p-4">
       <Label class="h-[calc(100%-30px)]">
-        <Textarea v-model="message" class="h-full resize-none!" />
+        <Textarea
+          ref="message-textarea"
+          v-model="message"
+          class="h-full resize-none!"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          autofocus
+          spellcheck="false"
+        />
       </Label>
       <div class="flex h-[50px] justify-center gap-2">
         <Button :disabled @click="fix">Fix</Button>

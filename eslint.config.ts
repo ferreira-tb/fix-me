@@ -12,6 +12,8 @@ export default defineConfig({
     },
     typescript: {
       '@typescript-eslint/consistent-type-definitions': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
     },
     vue: {
       'vue/no-static-inline-styles': 'off',

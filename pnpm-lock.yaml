@@ -33,8 +33,8 @@ importers:
         specifier: ^3.4.1
         version: 3.4.1(typescript@5.9.3)
       '@tb-dev/vue-components':
-        specifier: ^7.0.2
-        version: 7.0.2(@nuxt/kit@4.1.2(magicast@0.3.5))(@nuxt/schema@4.1.2)(nuxt@4.1.2(@parcel/watcher@2.5.1)(@types/node@24.10.1)(@vue/compiler-sfc@3.5.25)(db0@0.3.2)(eslint@9.39.1(jiti@2.6.1))(ioredis@5.7.0)(lightningcss@1.30.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.52.0)(terser@5.44.0)(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.1))(typescript@5.9.3)
+        specifier: ^7.0.3
+        version: 7.0.3(@nuxt/kit@4.1.2(magicast@0.3.5))(@nuxt/schema@4.1.2)(nuxt@4.1.2(@parcel/watcher@2.5.1)(@types/node@24.10.1)(@vue/compiler-sfc@3.5.25)(db0@0.3.2)(eslint@9.39.1(jiti@2.6.1))(ioredis@5.7.0)(lightningcss@1.30.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.52.0)(terser@5.44.0)(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.1))(typescript@5.9.3)
       '@vueuse/core':
         specifier: ^14.1.0
         version: 14.1.0(vue@3.5.25(typescript@5.9.3))
@@ -42,8 +42,8 @@ importers:
         specifier: ^5.4.4
         version: 5.4.4
       lucide-vue-next:
-        specifier: ^0.555.0
-        version: 0.555.0(vue@3.5.25(typescript@5.9.3))
+        specifier: ^0.556.0
+        version: 0.556.0(vue@3.5.25(typescript@5.9.3))
       pinia:
         specifier: ^3.0.4
         version: 3.0.4(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3))
@@ -1337,8 +1337,8 @@ packages:
   '@tb-dev/utils@7.0.19':
     resolution: {integrity: sha512-wNqBtl7iy9JuBbdYLqwzj0E2ndxnhBAWr5bTrqMQmhcb/9uJyncRDKIeIlwcAlD78Au14PmSr18qMosE3gLRHA==}
 
-  '@tb-dev/vue-components@7.0.2':
-    resolution: {integrity: sha512-482I58iTqaASE461P0EIbcYkTQefOtazGQ7CfLFxyIEPa8yTbvNeSUujCXKQ18eBOyjx9xpiwS+Rt1kMj1z/5Q==}
+  '@tb-dev/vue-components@7.0.3':
+    resolution: {integrity: sha512-R9UmVQBuPqgR+knrZPpGhzOxX5qj+9ZcxKpW9JwJaRWjHkj06kW3C6dbijD/r/LTBQNTj3jdKpo9Rmk7qNBLrQ==}
 
   '@tb-dev/vue@3.4.1':
     resolution: {integrity: sha512-ehW8knXsToBf5+OM/ZcVDKKYAD2/80IOiXjxBkBX7gWsUK81Ei41Jz1N7zbkgpeq4Kgoap+SGcODKEAxUVs3Gg==}
@@ -2731,6 +2731,11 @@ packages:
 
   lucide-vue-next@0.555.0:
     resolution: {integrity: sha512-7hczPsiMD/y+VNLpal5Q5Wv09kQxlHS0l/cM1xagrd+MA3i5umMm+PUXqllvsbgwAl3PHv27fo59h4PN02GM5A==}
+    peerDependencies:
+      vue: '>=3.0.1'
+
+  lucide-vue-next@0.556.0:
+    resolution: {integrity: sha512-JvdCM2smkWrMDhkfD/FpZiWekkbWD6MZLstIFx/FOVZgULrnMr5hegCB9LlTdgllEFnQYQs8hhHC1WYcAV9HTA==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -5291,7 +5296,7 @@ snapshots:
 
   '@tb-dev/utils@7.0.19': {}
 
-  '@tb-dev/vue-components@7.0.2(@nuxt/kit@4.1.2(magicast@0.3.5))(@nuxt/schema@4.1.2)(nuxt@4.1.2(@parcel/watcher@2.5.1)(@types/node@24.10.1)(@vue/compiler-sfc@3.5.25)(db0@0.3.2)(eslint@9.39.1(jiti@2.6.1))(ioredis@5.7.0)(lightningcss@1.30.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.52.0)(terser@5.44.0)(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.1))(typescript@5.9.3)':
+  '@tb-dev/vue-components@7.0.3(@nuxt/kit@4.1.2(magicast@0.3.5))(@nuxt/schema@4.1.2)(nuxt@4.1.2(@parcel/watcher@2.5.1)(@types/node@24.10.1)(@vue/compiler-sfc@3.5.25)(db0@0.3.2)(eslint@9.39.1(jiti@2.6.1))(ioredis@5.7.0)(lightningcss@1.30.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.52.0)(terser@5.44.0)(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.1))(typescript@5.9.3)':
     dependencies:
       '@tanstack/vue-table': 8.21.3(vue@3.5.25(typescript@5.9.3))
       '@tb-dev/utils': 7.0.19
@@ -7002,6 +7007,10 @@ snapshots:
     optional: true
 
   lucide-vue-next@0.555.0(vue@3.5.25(typescript@5.9.3)):
+    dependencies:
+      vue: 3.5.25(typescript@5.9.3)
+
+  lucide-vue-next@0.556.0(vue@3.5.25(typescript@5.9.3)):
     dependencies:
       vue: 3.5.25(typescript@5.9.3)
 

@@ -51,9 +51,11 @@ onMounted(() => commands.showWindow().err());
     <Sidebar variant="inset" class="p-0">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Fixes</SidebarGroupLabel>
+          <SidebarGroupLabel class="select-none">
+            <span>Fixes</span>
+          </SidebarGroupLabel>
           <SidebarGroupContent>
-            <div class="flex w-full flex-col gap-3">
+            <div class="flex w-full flex-col gap-3 select-none">
               <Label>
                 <Switch v-model="settings.grammar.enabled" />
                 <span>Grammar</span>
@@ -71,7 +73,9 @@ onMounted(() => commands.showWindow().err());
         </SidebarGroup>
 
         <SidebarGroup>
-          <SidebarGroupLabel>Style</SidebarGroupLabel>
+          <SidebarGroupLabel class="select-none">
+            <span>Style</span>
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <div class="flex w-full flex-col gap-3">
               <Label>
@@ -87,10 +91,10 @@ onMounted(() => commands.showWindow().err());
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter>
+      <SidebarFooter v-if="typeof route.name === 'string'">
         <DropdownMenu>
           <DropdownMenuTrigger as-child>
-            <Button v-if="typeof route.name === 'string'" variant="outline">
+            <Button variant="outline">
               <span>{{ capitalCase(route.name) }}</span>
               <ChevronUp class="ml-auto" />
             </Button>
